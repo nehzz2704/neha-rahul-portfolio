@@ -2849,3 +2849,408 @@ body.rahul-world {
     animation: none !important;
   }
 }
+
+/* =========================================================
+   FIRST-PERSON 2.5D EXPLORATION — NEHA & RAHUL
+   Additive overrides: original portfolio and backgrounds kept.
+========================================================= */
+
+.corridor-viewport,
+.arcade-viewport {
+  position: relative;
+  width: min(1200px, 94%);
+  height: clamp(430px, 68vh, 700px);
+  min-height: 430px;
+  margin: 24px auto 34px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 22px;
+  perspective: 900px;
+  perspective-origin: 50% 48%;
+  box-shadow: 0 18px 55px rgba(70, 25, 75, .22);
+}
+
+.corridor-scene,
+.arcade-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+/* Neha's enchanted corridor */
+.corridor-viewport {
+  background: linear-gradient(180deg, #f5d8f0 0%, #eab9df 48%, #9c6f9f 100%);
+  border: 2px solid rgba(255,255,255,.8);
+  box-shadow: 0 0 35px rgba(255, 190, 235, .65), inset 0 0 45px rgba(255,255,255,.35);
+}
+
+.corridor-scene {
+  background: radial-gradient(ellipse at 50% 44%, rgba(255,255,255,.35), transparent 54%);
+}
+
+.corridor-ceiling {
+  position: absolute;
+  inset: 0 0 48% 0;
+  background: linear-gradient(180deg, #f8dff2, #dba9d6);
+  clip-path: polygon(0 0,100% 0,67% 100%,33% 100%);
+  opacity: .9;
+}
+
+.corridor-wall {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 38%;
+  background: linear-gradient(90deg, #bd83b8, #f0c8e8 72%, #d6a3d1);
+  border: 1px solid rgba(255,255,255,.35);
+}
+.corridor-wall-left {
+  left: 0;
+  clip-path: polygon(0 0,100% 27%,100% 75%,0 100%);
+}
+.corridor-wall-right {
+  right: 0;
+  transform: scaleX(-1);
+  clip-path: polygon(0 27%,100% 0,100% 100%,0 75%);
+}
+
+.corridor-floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 43%;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,.12) 0 2px, transparent 2px 13%),
+    linear-gradient(180deg, #b477aa, #704b80);
+  clip-path: polygon(33% 0,67% 0,100% 100%,0 100%);
+  transform-origin: center top;
+}
+
+.corridor-end {
+  position: absolute;
+  z-index: 2;
+  left: 42%;
+  top: 23%;
+  width: 16%;
+  height: 43%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: #fff7ff;
+  background: linear-gradient(145deg, #9e62a9, #5b397b);
+  border: 5px solid #f7d9f3;
+  border-radius: 48% 48% 4px 4px;
+  box-shadow: 0 0 28px #fff, 0 0 70px #e99be8;
+  font: 700 clamp(7px, .9vw, 12px) 'Quicksand', sans-serif;
+}
+.corridor-end-glow { font-size: 30px; margin-bottom: 8px; }
+
+.corridor-pedestal {
+  position: absolute;
+  z-index: 5;
+  width: clamp(100px, 16%, 190px);
+  height: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transform-origin: center bottom;
+  filter: drop-shadow(0 12px 12px rgba(66,30,70,.25));
+}
+.pedestal-column {
+  width: 58%;
+  height: 52%;
+  background: linear-gradient(90deg, #98639d, #f7d4ed 48%, #a56aa6);
+  border: 2px solid rgba(255,255,255,.75);
+  border-radius: 9px 9px 3px 3px;
+}
+.pedestal-glow {
+  position: absolute;
+  bottom: 42%;
+  width: 100%;
+  height: 30%;
+  background: radial-gradient(ellipse, rgba(255,255,255,.85), rgba(239,153,226,.35) 45%, transparent 72%);
+  pointer-events: none;
+}
+.corridor-book {
+  position: relative;
+  z-index: 2;
+  width: 72%;
+  min-height: 82px;
+  margin-bottom: -2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff8ff;
+  background: linear-gradient(135deg, #a64f91, #613b82);
+  border: 3px solid #f8d9f3;
+  border-radius: 8px 12px 8px 5px;
+  box-shadow: 0 0 14px rgba(255,255,255,.7), inset 4px 0 0 rgba(255,255,255,.22);
+  cursor: pointer;
+  transition: filter .25s, box-shadow .25s, transform .25s;
+}
+.corridor-book:hover,
+.corridor-book:focus-visible,
+.corridor-book.object-nearby {
+  filter: brightness(1.2);
+  transform: translateY(-7px) scale(1.08);
+  box-shadow: 0 0 22px #fff, 0 0 42px #f5a9ed;
+  outline: none;
+}
+.corridor-book-symbol { font-size: 22px; }
+.corridor-book-title { font: 700 9px 'Quicksand', sans-serif; letter-spacing: .7px; }
+.corridor-book-number { font: 700 8px 'Quicksand', sans-serif; opacity: .75; }
+
+/* Depth placement; JavaScript will move the camera through these layers. */
+.pedestal-one { left: 8%; top: 47%; transform: scale(.78); }
+.pedestal-two { left: 23%; top: 38%; transform: scale(.9); }
+.pedestal-three { left: 41%; top: 32%; transform: scale(1); }
+.pedestal-four { right: 22%; top: 38%; transform: scale(.9); }
+.pedestal-five { right: 7%; top: 47%; transform: scale(.78); }
+
+.corridor-lamp {
+  position: absolute;
+  z-index: 6;
+  color: #fff9d9;
+  background: rgba(255,224,248,.35);
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 50%;
+  box-shadow: 0 0 18px #fff, 0 0 35px #f6a9eb;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s;
+}
+.corridor-lamp:hover { transform: scale(1.3); box-shadow: 0 0 30px #fff, 0 0 55px #ff9ee8; }
+.lamp-one { left: 12%; top: 18%; }
+.lamp-two { left: 31%; top: 12%; }
+.lamp-three { right: 31%; top: 12%; }
+.lamp-four { right: 12%; top: 18%; }
+
+.corridor-butterflies,
+.corridor-sparkles {
+  position: absolute;
+  z-index: 7;
+  color: #fff;
+  text-shadow: 0 0 12px #fff, 0 0 24px #e88ad9;
+  pointer-events: none;
+  animation: float 4s ease-in-out infinite;
+}
+.corridor-butterflies { left: 8%; top: 25%; font-size: 20px; }
+.corridor-sparkles { right: 8%; top: 28%; font-size: 18px; animation-delay: -2s; }
+
+/* Rahul's wide open arcade hall */
+.arcade-viewport {
+  background: radial-gradient(ellipse at 50% 34%, #38206c 0%, #11132f 54%, #050713 100%);
+  border: 2px solid rgba(81,220,255,.65);
+  box-shadow: 0 0 35px rgba(0,210,255,.22), inset 0 0 65px rgba(125,35,255,.22);
+}
+.arcade-scene {
+  background: radial-gradient(ellipse at 50% 45%, rgba(91,38,170,.22), transparent 60%);
+}
+.arcade-ceiling {
+  position: absolute;
+  inset: 0 0 50%;
+  background: repeating-conic-gradient(from 20deg at 50% 0%, rgba(0,225,255,.1) 0 8deg, transparent 8deg 16deg),
+    linear-gradient(180deg, #090b20, #24134b);
+  clip-path: polygon(0 0,100% 0,68% 100%,32% 100%);
+}
+.arcade-wall {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 36%;
+  background: repeating-linear-gradient(0deg, transparent 0 55px, rgba(0,225,255,.08) 56px 58px),
+    linear-gradient(90deg, #090b20, #25144b 75%, #10102d);
+}
+.arcade-wall-left { left: 0; clip-path: polygon(0 0,100% 25%,100% 78%,0 100%); }
+.arcade-wall-right { right: 0; transform: scaleX(-1); clip-path: polygon(0 25%,100% 0,100% 100%,0 78%); }
+.arcade-back-wall {
+  position: absolute;
+  z-index: 2;
+  left: 34%; right: 34%; top: 15%; height: 42%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: linear-gradient(145deg, #19143e, #090b20);
+  border: 2px solid #8b45ff;
+  box-shadow: 0 0 28px #7b32ff, inset 0 0 35px #00cfff22;
+}
+.arcade-neon-sign { color: #bdfaff; text-shadow: 0 0 12px #00dfff, 0 0 26px #9a42ff; }
+.arcade-neon-sign h2 { font: 800 clamp(10px, 1.5vw, 20px) 'Orbitron', sans-serif; letter-spacing: 2px; }
+.arcade-neon-sign span { color: #ff5cf4; font-size: 22px; }
+.arcade-back-decoration { margin-top: 15px; color: #7bdeff; letter-spacing: 6px; }
+.arcade-floor {
+  position: absolute;
+  z-index: 1;
+  bottom: 0; left: 0; right: 0; height: 48%;
+  background: linear-gradient(180deg, #17113b, #080a1b 80%);
+  clip-path: polygon(32% 0,68% 0,100% 100%,0 100%);
+}
+.arcade-floor-grid {
+  position: absolute;
+  z-index: 2;
+  bottom: 0; left: 0; right: 0; height: 47%;
+  background: repeating-linear-gradient(90deg, transparent 0 65px, rgba(0,220,255,.22) 66px 68px),
+    repeating-linear-gradient(0deg, transparent 0 38px, rgba(173,58,255,.2) 39px 41px);
+  clip-path: polygon(32% 0,68% 0,100% 100%,0 100%);
+  transform-origin: center top;
+}
+.arcade-machines { position: absolute; inset: 0; z-index: 5; transform-style: preserve-3d; }
+.arcade-machine {
+  position: absolute;
+  width: clamp(88px, 12%, 145px);
+  min-height: 190px;
+  height: 42%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #d9fbff;
+  background: linear-gradient(145deg, #25145a, #08091d 75%);
+  border: 2px solid #5deaff;
+  border-radius: 10px;
+  box-shadow: 0 0 18px #087bff88, inset 0 0 22px #8e35ff44;
+  cursor: pointer;
+  transition: filter .25s, box-shadow .25s, transform .25s;
+}
+.arcade-machine:hover,
+.arcade-machine:focus-visible,
+.arcade-machine.object-nearby {
+  filter: brightness(1.25);
+  box-shadow: 0 0 28px #00eaff, 0 0 55px #8b36ff;
+  outline: none;
+}
+.machine-one { left: 8%; top: 43%; transform: scale(.72) rotateY(8deg); }
+.machine-two { left: 25%; top: 31%; transform: scale(.88) rotateY(5deg); }
+.machine-three { left: 43%; top: 38%; transform: scale(.78); }
+.machine-four { right: 23%; top: 27%; transform: scale(.94) rotateY(-6deg); }
+.machine-five { right: 5%; top: 44%; transform: scale(.7) rotateY(-9deg); }
+.machine-screen {
+  width: 90%; min-height: 62px;
+  display: grid; place-content: center; text-align: center;
+  background: radial-gradient(circle, #3e1a8e, #07051c);
+  border: 2px solid #6ffaff; border-radius: 5px;
+  box-shadow: inset 0 0 18px #00eaff55, 0 0 12px #00eaff55;
+}
+.screen-symbol { color: #fff; font-size: 25px; text-shadow: 0 0 12px #00eaff; }
+.screen-text { color: #aaf7ff; font: 700 8px 'Orbitron', sans-serif; }
+.machine-name { color: #aaf7ff; font: 700 9px 'Orbitron', sans-serif; text-align: center; }
+.machine-number { color: #a5faff; font: 10px 'Orbitron', sans-serif; }
+.machine-controls { color: #f36dff; font-size: 15px; }
+.machine-base { display: block; width: 75%; height: 12px; background: linear-gradient(90deg,#30145e,#61eaff,#30145e); box-shadow: 0 0 15px #00dfff; }
+
+.arcade-light {
+  position: absolute; z-index: 7;
+  color: #8ffaff; background: rgba(15,20,55,.55);
+  border: 1px solid #58eaff; border-radius: 50%;
+  box-shadow: 0 0 15px #00dfff, 0 0 30px #9a42ff;
+  cursor: pointer; transition: transform .25s, box-shadow .25s;
+}
+.arcade-light:hover { transform: scale(1.3); box-shadow: 0 0 28px #00eaff, 0 0 50px #a42cff; }
+.light-one { left: 12%; top: 18%; }
+.light-two { left: 34%; top: 10%; }
+.light-three { right: 34%; top: 10%; }
+.light-four { right: 12%; top: 18%; }
+.arcade-particles,
+.arcade-glow { position: absolute; z-index: 6; pointer-events: none; }
+.arcade-particles { top: 22%; left: 10%; color: #9ffaff; text-shadow: 0 0 15px #00dfff; animation: sparkle 3s ease-in-out infinite; }
+.arcade-glow { inset: 0; background: radial-gradient(ellipse at 50% 70%, transparent 20%, rgba(3,5,20,.22) 100%); }
+
+/* Game interface layers */
+.game-interface { position: absolute; inset: 0; z-index: 30; pointer-events: none; }
+.game-help-button,
+.game-direction-pad button { pointer-events: auto; }
+.game-help-button {
+  position: absolute; top: 16px; right: 16px;
+  padding: 11px 15px; color: #98517e;
+  background: rgba(255,244,251,.94); border: 1px solid #fff;
+  border-radius: 999px; box-shadow: 0 0 18px rgba(255,255,255,.8);
+  cursor: pointer; font: 700 11px 'Quicksand', sans-serif;
+}
+.rahul-world .game-help-button { color: #9af6ff; background: rgba(7,12,35,.94); border-color: #42dfff; box-shadow: 0 0 18px #168cff66; }
+.game-direction-pad {
+  position: absolute; left: 18px; bottom: 18px;
+  width: 150px; display: flex; flex-direction: column; align-items: center; gap: 5px;
+  pointer-events: none;
+}
+.game-direction-pad button {
+  width: 44px; height: 44px; border-radius: 50%;
+  color: #98517e; background: rgba(255,239,250,.94);
+  border: 1px solid #fff; box-shadow: 0 0 16px #fff;
+  cursor: pointer; touch-action: none; user-select: none;
+}
+.game-direction-middle { display: flex; gap: 34px; }
+.rahul-world .game-direction-pad button { color: #9af6ff; background: rgba(7,12,35,.94); border-color: #42dfff; box-shadow: 0 0 15px #168cff88; }
+.game-direction-pad button:active { transform: scale(.92); }
+.game-help-panel {
+  position: fixed; inset: 0; z-index: 1000;
+  display: none; place-items: center; padding: 18px;
+  background: rgba(28,12,35,.72); backdrop-filter: blur(8px);
+}
+.game-help-panel.active { display: grid; }
+.game-help-content {
+  position: relative; width: min(440px, 94vw); max-height: 85vh; overflow: auto;
+  padding: 34px; color: #74446d; background: #fff1fa;
+  border: 2px solid #fff; border-radius: 22px;
+  box-shadow: 0 0 35px #f5a9ed; font-family: 'Quicksand', sans-serif;
+}
+.rahul-world .game-help-content { color: #d9faff; background: #0b102b; border-color: #4ceaff; box-shadow: 0 0 35px #168cff88; }
+.game-help-close { position: absolute; top: 12px; right: 14px; border: 0; background: transparent; color: inherit; font-size: 20px; cursor: pointer; }
+.game-help-content h2 { margin: 0 0 14px; font-family: 'Orbitron', sans-serif; font-size: 18px; }
+.game-help-section { margin-top: 22px; line-height: 1.8; }
+.game-help-row { display: flex; justify-content: space-between; gap: 18px; padding: 5px 0; border-bottom: 1px solid rgba(150,100,150,.2); }
+.game-help-row span:first-child { font-weight: 800; }
+.game-help-footer { margin-top: 22px; font-weight: 800; }
+
+.game-overlay {
+  position: fixed; inset: 0; z-index: 1100;
+  display: none; place-items: center; padding: 24px;
+  background: rgba(20,8,30,.78); backdrop-filter: blur(9px);
+}
+.game-overlay.active { display: grid; }
+.game-overlay-panel {
+  position: relative; width: min(900px, 94vw); max-height: 88vh; overflow: auto;
+  padding: 42px; color: #74446d; background: #fff5fb;
+  border: 2px solid #fff; border-radius: 22px;
+  box-shadow: 0 0 40px #f5a9ed;
+  animation: fade-in .25s ease both;
+}
+.rahul-world .game-overlay-panel { color: #d9faff; background: #0b102b; border-color: #4ceaff; box-shadow: 0 0 40px #168cff88; }
+.game-close { position: sticky; float: right; top: 0; z-index: 2; border: 0; border-radius: 50%; width: 38px; height: 38px; color: inherit; background: rgba(150,100,150,.12); font-size: 20px; cursor: pointer; }
+.game-overlay-content { clear: both; }
+.game-nearby-prompt { pointer-events: none; }
+
+@media (max-width: 700px) {
+  .corridor-viewport, .arcade-viewport { width: 96%; height: 62vh; min-height: 390px; border-radius: 14px; }
+  .corridor-pedestal { width: 24%; }
+  .pedestal-one { left: 1%; top: 51%; }
+  .pedestal-two { left: 18%; top: 40%; }
+  .pedestal-three { left: 39%; top: 33%; }
+  .pedestal-four { right: 17%; top: 40%; }
+  .pedestal-five { right: 0; top: 51%; }
+  .corridor-book { min-height: 65px; border-width: 2px; }
+  .corridor-book-title { font-size: 7px; }
+  .arcade-machine { width: 19%; min-height: 135px; height: 34%; padding: 5px; }
+  .machine-one { left: 1%; top: 48%; }
+  .machine-two { left: 19%; top: 35%; }
+  .machine-three { left: 40%; top: 43%; }
+  .machine-four { right: 18%; top: 31%; }
+  .machine-five { right: 0; top: 49%; }
+  .machine-screen { min-height: 40px; }
+  .machine-name { font-size: 6px; }
+  .screen-text { font-size: 6px; }
+  .game-direction-pad { left: 8px; bottom: 8px; transform: scale(.88); transform-origin: bottom left; }
+  .game-help-button { top: 8px; right: 8px; }
+  .game-overlay-panel { padding: 25px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .corridor-butterflies, .corridor-sparkles, .arcade-particles { animation: none !important; }
+}
