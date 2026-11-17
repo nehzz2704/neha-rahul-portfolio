@@ -1,6 +1,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
 
+:root {
+  --bg: #090914;
+  --panel: #171426;
+  --purple: #b58aff;
+  --pink: #ff91cf;
+  --text: #f8f4ff;
+  --muted: #aaa2bd;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,122 +18,212 @@
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 20% 20%, #302052 0%, transparent 45%),
-    radial-gradient(ellipse at 80% 80%, #172b4c 0%, transparent 45%),
-    #090914;
-  color: #fff;
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Rajdhani', sans-serif;
   overflow-x: hidden;
 }
 
-main {
-  width: min(1100px, 92%);
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 20%, #40235d55, transparent 45%),
+    radial-gradient(ellipse at 85% 75%, #263c6855, transparent 45%);
+  z-index: -1;
+}
+
+.player-menu {
+  width: min(1150px, 92%);
   margin: auto;
-  padding: 65px 0;
+  padding: 65px 0 35px;
   text-align: center;
 }
 
+.menu-header {
+  animation: fade-in 1s ease both;
+}
+
 .eyebrow {
-  color: #c5a4ff;
+  color: var(--purple);
   font-family: 'Orbitron', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 5px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(36px, 7vw, 76px);
+  font-size: clamp(35px, 7vw, 76px);
   letter-spacing: 5px;
-  text-shadow: 0 0 25px #a56cff;
+  text-shadow: 0 0 25px #a56cff99;
 }
 
 .subtitle {
-  color: #c9c4db;
+  color: var(--muted);
   font-size: 20px;
   margin-top: 15px;
 }
 
 .section-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 4px;
-  margin: 65px 0 28px;
   color: #d8c8ff;
+  margin: 65px 0 35px;
 }
 
 .players {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  gap: 32px;
 }
 
 .player-card {
   position: relative;
-  padding: 35px 24px;
-  min-height: 330px;
-  border: 1px solid #55466e;
+  min-height: 490px;
+  padding: 22px;
+  border: 1px solid #51445f;
   border-radius: 18px;
-  background: linear-gradient(145deg, #211b35, #10101d);
-  transition: transform 0.35s ease, border-color 0.35s ease,
-              box-shadow 0.35s ease;
+  background: linear-gradient(150deg, #211a35, #100f1c 75%);
   overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.player-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(
+    circle at 50% 40%,
+    #ac70ff33,
+    transparent 65%
+  );
+  transition: opacity 0.4s ease;
+  z-index: -1;
 }
 
 .player-card:hover {
-  transform: translateY(-12px) scale(1.025);
-  border-color: #c49aff;
-  box-shadow: 0 0 35px #a66aff55;
+  transform: translateY(-10px) scale(1.025);
+  border-color: var(--purple);
+  box-shadow: 0 0 35px #a56cff55;
+}
+
+.player-card:hover::before {
+  opacity: 1;
+}
+
+.rahul-card:hover {
+  border-color: #65d8ff;
+  box-shadow: 0 0 35px #65d8ff44;
 }
 
 .player-number {
-  color: #a88bc9;
   font-family: 'Orbitron', sans-serif;
   font-size: 11px;
   letter-spacing: 3px;
+  color: #a99abf;
+  text-align: left;
 }
 
-.character-placeholder {
-  width: 150px;
-  height: 150px;
-  margin: 24px auto;
-  border-radius: 50%;
+.character-stage {
+  position: relative;
+  width: 100%;
+  height: 285px;
   display: grid;
   place-items: center;
-  font-size: 70px;
-  background: radial-gradient(circle, #7955a8, #28203e);
-  box-shadow: 0 0 30px #a56cff66;
-  transition: transform 0.35s ease;
+  overflow: hidden;
 }
 
-.player-card:hover .character-placeholder {
-  transform: scale(1.12) rotate(-4deg);
+.silhouette {
+  width: 130px;
+  height: 235px;
+  background: #05050a;
+  filter: drop-shadow(0 0 12px #a56cff55);
+  border-radius: 48% 48% 18% 18%;
+  clip-path: polygon(
+    36% 0, 64% 0, 78% 13%, 72% 30%,
+    85% 38%, 100% 100%, 0 100%,
+    15% 38%, 28% 30%, 22% 13%
+  );
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.player-card h3 {
+.reveal-preview {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  color: var(--pink);
   font-family: 'Orbitron', sans-serif;
-  font-size: 23px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.player-card:hover .silhouette {
+  opacity: 0.15;
+  transform: scale(1.12);
+}
+
+.player-card:hover .reveal-preview {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.rahul-card .reveal-preview {
+  color: #65d8ff;
+}
+
+.player-info {
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.player-role {
+  color: var(--purple);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
   letter-spacing: 3px;
 }
 
-.player-card p {
-  color: #c4bfd0;
-  margin-top: 10px;
+.rahul-card .player-role {
+  color: #65d8ff;
+}
+
+.player-info h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 27px;
+  letter-spacing: 4px;
+  margin: 8px 0;
+}
+
+.player-info > p:not(.player-role) {
+  color: var(--muted);
   font-size: 17px;
 }
 
 .select-button {
-  margin-top: 25px;
-  padding: 13px 22px;
-  border: 1px solid #b58aff;
-  border-radius: 7px;
-  background: #8d56c8;
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 23px;
+  border: 1px solid var(--purple);
+  border-radius: 6px;
   color: white;
+  background: #8d56c8;
   font-family: 'Orbitron', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 1px;
-  cursor: pointer;
+  text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -133,16 +232,36 @@ h1 {
   transform: scale(1.06);
 }
 
+.rahul-card .select-button {
+  background: #245c78;
+  border-color: #65d8ff;
+}
+
+.rahul-card .select-button:hover {
+  background: #328bb2;
+}
+
 footer {
   margin-top: 65px;
   color: #77718c;
-  font-size: 13px;
-  letter-spacing: 2px;
+  font-size: 12px;
+  letter-spacing: 3px;
 }
 
-@media (max-width: 650px) {
-  main {
-    padding: 45px 0;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .player-menu {
+    padding-top: 45px;
   }
 
   .players {
@@ -151,5 +270,16 @@ footer {
 
   .section-title {
     margin-top: 45px;
+  }
+
+  .player-card {
+    min-height: 450px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
