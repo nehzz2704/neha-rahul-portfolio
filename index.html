@@ -37,7 +37,9 @@
           <p class="player-role">THE CREATIVE SOUL</p>
           <h3>NEHA</h3>
           <p>Animation, imagination & a little magic.</p>
-          <a class="select-button" href="neha.html">
+          <a class="select-button portal-link"
+             href="neha.html"
+             data-portal="neha">
             ENTER HER WORLD ↗
           </a>
         </div>
@@ -58,7 +60,9 @@
           <p class="player-role">THE WORLD BUILDER</p>
           <h3>RAHUL</h3>
           <p>Characters, creativity & beyond reality.</p>
-          <a class="select-button" href="rahul.html">
+          <a class="select-button portal-link"
+             href="rahul.html"
+             data-portal="rahul">
             ENTER HIS WORLD ↗
           </a>
         </div>
@@ -71,6 +75,67 @@
     </footer>
 
   </main>
+
+  <!-- PORTAL TRANSITION -->
+  <div class="portal-transition" id="portalTransition" aria-hidden="true">
+
+    <!-- NEHA'S PORTAL -->
+    <div class="portal-scene neha-portal">
+      <div class="portal-ring"></div>
+      <div class="portal-core"></div>
+
+      <div class="portal-butterflies">
+        <span>🦋</span>
+        <span>🦋</span>
+        <span>🦋</span>
+        <span>✦</span>
+        <span>♡</span>
+        <span>✧</span>
+      </div>
+
+      <p>ENTERING NEHA'S WORLD...</p>
+    </div>
+
+    <!-- RAHUL'S PORTAL -->
+    <div class="portal-scene rahul-portal">
+      <div class="portal-ring"></div>
+      <div class="portal-core"></div>
+
+      <div class="portal-hand">✋</div>
+
+      <div class="portal-energy">
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>✧</span>
+      </div>
+
+      <p>ENTERING RAHUL'S DIMENSION...</p>
+    </div>
+
+  </div>
+
+  <script>
+    const portalLinks = document.querySelectorAll(".portal-link");
+    const transition = document.getElementById("portalTransition");
+
+    portalLinks.forEach(link => {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const destination = this.dataset.portal;
+        const targetPage = this.href;
+
+        transition.className = "portal-transition active " + destination + "-active";
+
+        document.body.classList.add("portal-opening");
+
+        setTimeout(() => {
+          window.location.href = targetPage;
+        }, 1500);
+      });
+    });
+  </script>
 
 </body>
 </html>
