@@ -1244,3 +1244,325 @@ body.rahul-world {
         transform: rotate(360deg) scale(1);
     }
 }
+
+/* =====================================
+   PORTAL TRANSITION — SHARED
+===================================== */
+
+.portal-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    background: #090713;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.portal-transition.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.portal-scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.portal-scene p {
+    position: absolute;
+    bottom: 9%;
+    color: white;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    text-align: center;
+    z-index: 5;
+}
+
+.portal-ring {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    transform: scale(0.05);
+}
+
+.portal-core {
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    transform: scale(0.05);
+}
+
+.portal-opening {
+    overflow: hidden;
+}
+
+/* =====================================
+   NEHA — PINK BUTTERFLY PORTAL
+===================================== */
+
+.neha-portal {
+    background:
+        radial-gradient(circle at center, #f8b9dc 0%, #bd75bd 38%, #54275f 75%, #170d2a 100%);
+}
+
+.neha-portal .portal-ring {
+    border: 9px solid #ffd5f0;
+    box-shadow:
+        0 0 20px #ffb8e5,
+        0 0 55px #f28bd0,
+        0 0 110px #d66bcb,
+        inset 0 0 35px #ffffff;
+}
+
+.neha-portal .portal-core {
+    background:
+        radial-gradient(circle, #fff4ff 0%, #f9b7e6 25%, #bb68c9 65%, #592568 100%);
+    box-shadow: 0 0 70px #ffb6e8;
+}
+
+.neha-portal .portal-butterflies {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+}
+
+.portal-butterflies span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+}
+
+.neha-active .neha-portal {
+    opacity: 1;
+}
+
+.neha-active .neha-portal .portal-ring {
+    animation: pinkPortalOpen 1.5s ease-in-out forwards;
+}
+
+.neha-active .neha-portal .portal-core {
+    animation: pinkCoreOpen 1.5s ease-in-out forwards;
+}
+
+.neha-active .portal-butterflies span:nth-child(1) {
+    animation: butterflyOne 1.5s ease-out forwards;
+}
+
+.neha-active .portal-butterflies span:nth-child(2) {
+    animation: butterflyTwo 1.5s ease-out forwards;
+}
+
+.neha-active .portal-butterflies span:nth-child(3) {
+    animation: butterflyThree 1.5s ease-out forwards;
+}
+
+.neha-active .portal-butterflies span:nth-child(4) {
+    animation: butterflyFour 1.5s ease-out forwards;
+}
+
+.neha-active .portal-butterflies span:nth-child(5) {
+    animation: butterflyFive 1.5s ease-out forwards;
+}
+
+.neha-active .portal-butterflies span:nth-child(6) {
+    animation: butterflySix 1.5s ease-out forwards;
+}
+
+/* =====================================
+   RAHUL — PSYCHEDELIC PORTAL
+===================================== */
+
+.rahul-portal {
+    background:
+        radial-gradient(circle at center, #39236c 0%, #11102f 48%, #03040d 100%);
+}
+
+.rahul-portal .portal-ring {
+    border: 9px solid #66f4ff;
+    box-shadow:
+        0 0 20px #66f4ff,
+        0 0 60px #7654ff,
+        0 0 120px #3420aa,
+        inset 0 0 35px #a9faff;
+}
+
+.rahul-portal .portal-core {
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            #08e5ff 0deg,
+            #5835ff 35deg,
+            #d02aff 70deg,
+            #08e5ff 110deg
+        );
+    box-shadow: 0 0 70px #674cff;
+}
+
+.rahul-portal .portal-hand {
+    position: absolute;
+    z-index: 4;
+    font-size: clamp(5rem, 13vw, 10rem);
+    opacity: 0;
+    transform: translateY(100px) scale(0.3) rotate(-20deg);
+    filter: drop-shadow(0 0 20px #70edff);
+}
+
+.rahul-portal .portal-energy {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+}
+
+.portal-energy span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #8ffaff;
+    font-size: 2.5rem;
+    opacity: 0;
+}
+
+.rahul-active .rahul-portal {
+    opacity: 1;
+}
+
+.rahul-active .rahul-portal .portal-ring {
+    animation: psychedelicPortalOpen 1.5s ease-in-out forwards;
+}
+
+.rahul-active .rahul-portal .portal-core {
+    animation: psychedelicCoreOpen 1.5s ease-in-out forwards;
+}
+
+.rahul-active .portal-hand {
+    animation: handEmerges 1.5s ease-out forwards;
+}
+
+.rahul-active .portal-energy span:nth-child(1) {
+    animation: energyOne 1.5s ease-out forwards;
+}
+
+.rahul-active .portal-energy span:nth-child(2) {
+    animation: energyTwo 1.5s ease-out forwards;
+}
+
+.rahul-active .portal-energy span:nth-child(3) {
+    animation: energyThree 1.5s ease-out forwards;
+}
+
+.rahul-active .portal-energy span:nth-child(4) {
+    animation: energyFour 1.5s ease-out forwards;
+}
+
+/* =====================================
+   ANIMATION KEYFRAMES
+===================================== */
+
+@keyframes pinkPortalOpen {
+    0% { transform: scale(0.05) rotate(0deg); }
+    55% { transform: scale(1.2) rotate(180deg); }
+    100% { transform: scale(9) rotate(360deg); }
+}
+
+@keyframes pinkCoreOpen {
+    0% { transform: scale(0.05); }
+    55% { transform: scale(1); }
+    100% { transform: scale(9); }
+}
+
+@keyframes butterflyOne {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-250px, -230px) scale(1.4) rotate(-25deg); }
+}
+
+@keyframes butterflyTwo {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translate(180px, -260px) scale(1.5) rotate(30deg); }
+}
+
+@keyframes butterflyThree {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translate(240px, 150px) scale(1.3) rotate(20deg); }
+}
+
+@keyframes butterflyFour {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-180px, 220px) scale(1.8) rotate(45deg); }
+}
+
+@keyframes butterflyFive {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translate(80px, -320px) scale(1.3); }
+}
+
+@keyframes butterflySix {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-280px, 50px) scale(1.4); }
+}
+
+@keyframes psychedelicPortalOpen {
+    0% { transform: scale(0.05) rotate(0deg); }
+    55% { transform: scale(1.2) rotate(-180deg); }
+    100% { transform: scale(9) rotate(-360deg); }
+}
+
+@keyframes psychedelicCoreOpen {
+    0% { transform: scale(0.05) rotate(0deg); }
+    55% { transform: scale(1) rotate(180deg); }
+    100% { transform: scale(9) rotate(360deg); }
+}
+
+@keyframes handEmerges {
+    0% { opacity: 0; transform: translateY(100px) scale(0.3) rotate(-20deg); }
+    45% { opacity: 1; }
+    100% { opacity: 1; transform: translateY(-15px) scale(1.1) rotate(0deg); }
+}
+
+@keyframes energyOne {
+    0% { opacity: 0; transform: translate(-50%, -50%); }
+    35% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-220px, -180px) scale(2); }
+}
+
+@keyframes energyTwo {
+    0% { opacity: 0; transform: translate(-50%, -50%); }
+    35% { opacity: 1; }
+    100% { opacity: 0; transform: translate(200px, -220px) scale(2); }
+}
+
+@keyframes energyThree {
+    0% { opacity: 0; transform: translate(-50%, -50%); }
+    35% { opacity: 1; }
+    100% { opacity: 0; transform: translate(230px, 180px) scale(2); }
+}
+
+@keyframes energyFour {
+    0% { opacity: 0; transform: translate(-50%, -50%); }
+    35% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-200px, 220px) scale(2); }
+}
