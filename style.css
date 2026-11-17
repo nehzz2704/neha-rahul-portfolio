@@ -3737,3 +3737,273 @@ body.rahul-world {
   .enchanted-game .pedestal-glow { top: 81px; }
   .enchanted-game .corridor-book-title { font-size: 6px; }
 }
+
+
+
+/* =========================================================
+   NEHA FINAL REFINEMENT — 3D BOOKS, CENTRED ARCH, LANTERNS
+   Scoped only to .enchanted-game. Rahul's styles are untouched.
+========================================================= */
+
+/* Keep the distant arch centred and make its lettering readable. */
+.enchanted-game .corridor-end {
+  left: 50% !important;
+  top: 13% !important;
+  width: clamp(190px, 22%, 270px) !important;
+  height: 49% !important;
+  transform: translateX(-50%) !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px 17px;
+  text-align: center;
+  overflow: visible;
+  border-width: 5px;
+  border-radius: 50% 50% 5px 5px;
+  background: linear-gradient(180deg, #a56bb5 0%, #86519c 58%, #623b80 100%);
+  box-shadow: 0 0 28px #fff1ff, 0 0 70px rgba(235,155,232,.75);
+}
+
+.enchanted-game .corridor-end-glow {
+  position: absolute;
+  inset: 8% 9% 18%;
+  z-index: 0;
+  margin: 0;
+  border-radius: 50% 50% 0 0;
+  background: radial-gradient(ellipse at 50% 42%, #fff4ff 0%, #efc4f1 38%, rgba(210,145,220,.35) 72%, transparent 100%);
+  filter: blur(5px);
+  opacity: .95;
+}
+
+.enchanted-game .corridor-end span {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  color: #fff8ff;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(8px, .95vw, 12px);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: 0 1px 8px #65376f, 0 0 12px #fff;
+}
+
+/* Give the books an unmistakable hard-cover, page-block appearance. */
+.enchanted-game .corridor-book {
+  overflow: visible;
+  isolation: isolate;
+  border: 2px solid #fff1ff;
+  border-radius: 7px 12px 12px 7px;
+  background:
+    linear-gradient(90deg,
+      rgba(65,28,78,.62) 0 8px,
+      transparent 8px 13px,
+      rgba(255,255,255,.12) 13px 17px,
+      transparent 17px),
+    linear-gradient(145deg, #b765a6 0%, #965092 48%, #75417f 100%);
+  box-shadow:
+    3px 3px 0 #62376f,
+    6px 6px 0 #4e2c62,
+    9px 11px 17px rgba(57,24,67,.34),
+    inset 0 0 0 3px rgba(255,255,255,.12),
+    inset 7px 0 10px rgba(255,255,255,.12);
+  transform-style: preserve-3d;
+}
+
+/* Spine on the left and the visible page edges on the right. */
+.enchanted-game .corridor-book::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 5px;
+  top: 5px;
+  bottom: 5px;
+  width: 9px;
+  border-radius: 4px 0 0 4px;
+  background: linear-gradient(90deg, #603364, #c17bb2 55%, #744078);
+  box-shadow: inset 1px 0 2px rgba(255,255,255,.35);
+}
+
+.enchanted-game .corridor-book::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 7px;
+  right: -6px;
+  bottom: 7px;
+  width: 7px;
+  border-radius: 0 4px 4px 0;
+  background: repeating-linear-gradient(
+    180deg,
+    #fff9f0 0 3px,
+    #e8d6e8 3px 4px
+  );
+  box-shadow: 2px 2px 3px rgba(58,27,66,.25);
+}
+
+.enchanted-game .corridor-book > span {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 5px rgba(67,26,76,.55);
+}
+
+.enchanted-game .corridor-book-symbol {
+  margin-top: 2px;
+  color: #fff7ff;
+  text-shadow: 0 0 9px #fff, 0 2px 5px rgba(64,25,75,.5);
+}
+
+.enchanted-game .corridor-book-title {
+  max-width: 100%;
+  padding: 0 2px;
+  color: #fffaff;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: .35px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.enchanted-game .corridor-book-number {
+  color: #fbe9fb;
+  font-family: Georgia, serif;
+  font-weight: 700;
+}
+
+.enchanted-game .corridor-book:hover,
+.enchanted-game .corridor-book:focus-visible {
+  transform: translateY(-7px) rotateY(-5deg) scale(1.035);
+  box-shadow:
+    3px 3px 0 #62376f,
+    6px 6px 0 #4e2c62,
+    10px 14px 22px rgba(57,24,67,.38),
+    0 0 24px rgba(255,231,250,.85),
+    inset 0 0 0 3px rgba(255,255,255,.16);
+}
+
+/* Lantern strings and bodies: six on each wall, shrinking toward the arch. */
+.enchanted-game .corridor-lights {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.enchanted-game .corridor-lamp {
+  position: absolute;
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: transparent;
+  font-size: 0;
+  box-shadow: none;
+  cursor: default;
+  filter: drop-shadow(0 0 5px rgba(255,211,112,.9))
+          drop-shadow(0 0 12px rgba(255,171,62,.6));
+  animation: neha-lantern-sway 4.8s ease-in-out infinite;
+}
+
+.enchanted-game .corridor-lamp::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  width: 72%;
+  height: 72%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255,249,213,.98);
+  border-radius: 42% 42% 48% 48%;
+  clip-path: polygon(22% 0, 78% 0, 100% 24%, 83% 78%, 50% 100%, 17% 78%, 0 24%);
+  background: radial-gradient(
+    ellipse at 50% 38%,
+    #fffde7 0%,
+    #ffedb0 30%,
+    #ffd16f 64%,
+    #e9a044 100%
+  );
+  box-shadow:
+    inset 0 0 6px #fff9df,
+    0 0 9px #ffd879,
+    0 0 17px rgba(255,177,68,.9);
+}
+
+.enchanted-game .corridor-lamp::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  width: 28%;
+  height: 7px;
+  transform: translateX(-50%);
+  border: 1px solid #fff0b5;
+  border-radius: 3px 3px 1px 1px;
+  background: linear-gradient(90deg, #bd8139, #fff1bd, #bd8139);
+  box-shadow: 0 -5px 0 -2px #ffe9a5;
+}
+
+/* Left wall: larger in front, progressively smaller toward the vanishing point. */
+.enchanted-game .lamp-left-1 { left: 7%; top: 20%; width: 34px; height: 49px; }
+.enchanted-game .lamp-left-2 { left: 11%; top: 16%; width: 30px; height: 44px; animation-delay: -.8s; }
+.enchanted-game .lamp-left-3 { left: 16%; top: 12%; width: 25px; height: 37px; animation-delay: -1.6s; }
+.enchanted-game .lamp-left-4 { left: 21%; top: 9%; width: 21px; height: 31px; animation-delay: -2.4s; }
+.enchanted-game .lamp-left-5 { left: 26%; top: 7%; width: 17px; height: 26px; animation-delay: -3.2s; }
+.enchanted-game .lamp-left-6 { left: 31%; top: 5%; width: 14px; height: 21px; animation-delay: -4s; }
+
+/* Right wall mirrors the left wall. */
+.enchanted-game .lamp-right-1 { right: 7%; top: 20%; width: 34px; height: 49px; animation-delay: -1.1s; }
+.enchanted-game .lamp-right-2 { right: 11%; top: 16%; width: 30px; height: 44px; animation-delay: -1.9s; }
+.enchanted-game .lamp-right-3 { right: 16%; top: 12%; width: 25px; height: 37px; animation-delay: -2.7s; }
+.enchanted-game .lamp-right-4 { right: 21%; top: 9%; width: 21px; height: 31px; animation-delay: -3.5s; }
+.enchanted-game .lamp-right-5 { right: 26%; top: 7%; width: 17px; height: 26px; animation-delay: -4.3s; }
+.enchanted-game .lamp-right-6 { right: 31%; top: 5%; width: 14px; height: 21px; animation-delay: -5.1s; }
+
+@keyframes neha-lantern-sway {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -5px; }
+}
+
+@media (max-width: 760px) {
+  .enchanted-game .corridor-end {
+    top: 12% !important;
+    width: 25% !important;
+    height: 43% !important;
+  }
+
+  .enchanted-game .corridor-end span {
+    font-size: 7px;
+    letter-spacing: .5px;
+  }
+
+  .enchanted-game .corridor-book {
+    border-radius: 6px 9px 9px 6px;
+    box-shadow:
+      2px 2px 0 #62376f,
+      4px 4px 0 #4e2c62,
+      6px 8px 12px rgba(57,24,67,.32),
+      inset 0 0 0 2px rgba(255,255,255,.12);
+  }
+
+  .enchanted-game .corridor-lamp {
+    transform: scale(.82);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 420px) {
+  .enchanted-game .corridor-end {
+    width: 29% !important;
+    height: 39% !important;
+  }
+
+  .enchanted-game .corridor-end span {
+    font-size: 6px;
+  }
+
+  .enchanted-game .corridor-lamp {
+    transform: scale(.68);
+  }
+}
