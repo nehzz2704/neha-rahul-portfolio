@@ -21,9 +21,9 @@
     <span>RAHUL'S ARCADE DIMENSION ◈</span>
   </nav>
 
-  <!-- ARCADE INTRO -->
   <main class="arcade-game">
 
+    <!-- INTRODUCTION -->
     <header class="arcade-intro">
       <p>WELCOME TO ANOTHER DIMENSION</p>
       <h1>BEYOND REALITY.</h1>
@@ -33,51 +33,73 @@
       </p>
     </header>
 
-    <!-- ARCADE ROOM -->
+    <!-- LARGE OPEN ARCADE HALL -->
     <section class="arcade-viewport" id="arcadeViewport">
 
       <div class="arcade-scene" id="arcadeScene">
 
-        <!-- ROOM ENVIRONMENT -->
+        <!-- ROOM ARCHITECTURE -->
         <div class="arcade-ceiling"></div>
 
         <div class="arcade-wall arcade-wall-left"></div>
         <div class="arcade-wall arcade-wall-right"></div>
 
+        <!-- DISTANT BACK WALL -->
         <div class="arcade-back-wall">
+
           <div class="arcade-neon-sign">
             <span>◈</span>
             <h2>BEYOND REALITY</h2>
             <span>◉</span>
           </div>
+
+          <div class="arcade-back-decoration">
+            ✦　◎　◈　✧　◉
+          </div>
+
         </div>
 
+        <!-- FLOOR -->
         <div class="arcade-floor"></div>
-
         <div class="arcade-floor-grid"></div>
 
-        <!-- NEON LIGHTS -->
-        <div class="arcade-lights" aria-hidden="true">
-          <span class="arcade-light light-one">✦</span>
-          <span class="arcade-light light-two">◉</span>
-          <span class="arcade-light light-three">✧</span>
-          <span class="arcade-light light-four">◎</span>
+        <!-- NEON ENVIRONMENT LIGHTS -->
+        <div class="arcade-lights" aria-label="Neon lights">
+
+          <button class="arcade-light light-one"
+            type="button" aria-label="Neon light one">✦</button>
+
+          <button class="arcade-light light-two"
+            type="button" aria-label="Neon light two">◉</button>
+
+          <button class="arcade-light light-three"
+            type="button" aria-label="Neon light three">✧</button>
+
+          <button class="arcade-light light-four"
+            type="button" aria-label="Neon light four">◎</button>
+
         </div>
 
-        <!-- ARCADE MACHINES -->
+        <!--
+          FIVE MACHINES DISTRIBUTED THROUGHOUT THE HALL.
+          CSS WILL POSITION THEM AT DIFFERENT DEPTHS.
+        -->
         <div class="arcade-machines">
 
           <!-- MACHINE 01: PLAYER PROFILE -->
           <button class="arcade-machine machine-one"
-                  data-machine="profile"
-                  type="button"
-                  aria-label="Open Player Profile">
+            data-machine="profile"
+            data-depth="1"
+            type="button"
+            aria-label="Open Player Profile">
 
             <span class="machine-number">01</span>
+
             <span class="machine-screen">
               <span class="screen-symbol">◈</span>
               <span class="screen-text">PLAYER 02</span>
             </span>
+
             <span class="machine-name">PLAYER PROFILE</span>
             <span class="machine-controls">●　●　●</span>
             <span class="machine-base"></span>
@@ -86,15 +108,18 @@
 
           <!-- MACHINE 02: CREATION MODE -->
           <button class="arcade-machine machine-two"
-                  data-machine="creations"
-                  type="button"
-                  aria-label="Open Creation Mode">
+            data-machine="creations"
+            data-depth="2"
+            type="button"
+            aria-label="Open Creation Mode">
 
             <span class="machine-number">02</span>
+
             <span class="machine-screen">
               <span class="screen-symbol">◎</span>
               <span class="screen-text">CREATE MODE</span>
             </span>
+
             <span class="machine-name">CREATION MODE</span>
             <span class="machine-controls">◉　●　◉</span>
             <span class="machine-base"></span>
@@ -103,15 +128,18 @@
 
           <!-- MACHINE 03: PLAYER STATUS -->
           <button class="arcade-machine machine-three"
-                  data-machine="status"
-                  type="button"
-                  aria-label="Open Player Status">
+            data-machine="status"
+            data-depth="3"
+            type="button"
+            aria-label="Open Player Status">
 
             <span class="machine-number">03</span>
+
             <span class="machine-screen">
               <span class="screen-symbol">⟁</span>
               <span class="screen-text">STATUS</span>
             </span>
+
             <span class="machine-name">PLAYER STATUS</span>
             <span class="machine-controls">●　◉　●</span>
             <span class="machine-base"></span>
@@ -120,15 +148,18 @@
 
           <!-- MACHINE 04: SKILL TREE -->
           <button class="arcade-machine machine-four"
-                  data-machine="skills"
-                  type="button"
-                  aria-label="Open Skill Tree">
+            data-machine="skills"
+            data-depth="4"
+            type="button"
+            aria-label="Open Skill Tree">
 
             <span class="machine-number">04</span>
+
             <span class="machine-screen">
               <span class="screen-symbol">⚡</span>
               <span class="screen-text">SKILL TREE</span>
             </span>
+
             <span class="machine-name">SKILL TREE</span>
             <span class="machine-controls">◈　●　◈</span>
             <span class="machine-base"></span>
@@ -137,15 +168,18 @@
 
           <!-- MACHINE 05: PLAYER DATA -->
           <button class="arcade-machine machine-five"
-                  data-machine="data"
-                  type="button"
-                  aria-label="Open Player Data">
+            data-machine="data"
+            data-depth="5"
+            type="button"
+            aria-label="Open Player Data">
 
             <span class="machine-number">05</span>
+
             <span class="machine-screen">
               <span class="screen-symbol">▣</span>
               <span class="screen-text">PLAYER DATA</span>
             </span>
+
             <span class="machine-name">PLAYER DATA</span>
             <span class="machine-controls">●　●　◉</span>
             <span class="machine-base"></span>
@@ -154,23 +188,23 @@
 
         </div>
 
-        <!-- FLOATING COSMIC DECORATIONS -->
+        <!-- FLOATING COSMIC DETAILS -->
         <div class="arcade-particles" aria-hidden="true">
-          ◈　✦　◎　✧　◉　⟁　✦
+          ◈　✦　◎　✧　◉　⟁　✦　◈
         </div>
 
         <div class="arcade-glow" aria-hidden="true"></div>
 
-      </div>
+        <!-- EXPLORATION PROMPT -->
+        <div class="arcade-interaction-prompt" id="arcadePrompt">
+          EXPLORE THE ARCADE
+        </div>
 
-      <!-- INTERACTION PROMPT -->
-      <div class="arcade-interaction-prompt" id="arcadePrompt">
-        EXPLORE THE ARCADE
       </div>
 
     </section>
 
-    <!-- MOVEMENT CONTROLS -->
+    <!-- KEYBOARD HELP -->
     <div class="arcade-controls">
 
       <div class="arcade-keyboard">
@@ -183,15 +217,16 @@
       </div>
 
       <p>WASD / ARROW KEYS TO EXPLORE</p>
+
       <p class="arcade-mobile-hint">
-        MOBILE MOVEMENT CONTROLS WILL APPEAR HERE
+        EXPLORE USING THE ON-SCREEN CONTROLS
       </p>
 
     </div>
 
   </main>
 
-  <!-- MACHINE CONTENT: PLAYER PROFILE -->
+  <!-- MACHINE 01: PLAYER PROFILE -->
   <template id="machine-profile-content">
 
     <div class="machine-content profile-content">
@@ -223,7 +258,7 @@
 
   </template>
 
-  <!-- MACHINE CONTENT: CREATION MODE -->
+  <!-- MACHINE 02: CREATION MODE -->
   <template id="machine-creations-content">
 
     <div class="machine-content creations-content">
@@ -278,7 +313,7 @@
 
   </template>
 
-  <!-- MACHINE CONTENT: PLAYER STATUS -->
+  <!-- MACHINE 03: PLAYER STATUS -->
   <template id="machine-status-content">
 
     <div class="machine-content status-content">
@@ -297,7 +332,7 @@
 
   </template>
 
-  <!-- MACHINE CONTENT: SKILL TREE -->
+  <!-- MACHINE 04: SKILL TREE -->
   <template id="machine-skills-content">
 
     <div class="machine-content skills-content">
@@ -327,7 +362,7 @@
 
   </template>
 
-  <!-- MACHINE CONTENT: PLAYER DATA -->
+  <!-- MACHINE 05: PLAYER DATA -->
   <template id="machine-data-content">
 
     <div class="machine-content data-content">
@@ -371,6 +406,7 @@
 
   </footer>
 
-<script src="game.js"></script>
+  <script src="game.js"></script>
+
 </body>
 </html>
