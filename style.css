@@ -1388,22 +1388,26 @@ body.rahul-world {
 }
 
 
+
 /* =====================================
    RAHUL — PSYCHEDELIC PORTAL
 ===================================== */
 
 .rahul-portal {
     background:
-        radial-gradient(ellipse at center,
-        #392064 0%,
-        #171033 48%,
-        #03030c 100%);
+        radial-gradient(
+            ellipse at center,
+            #392064 0%,
+            #171033 48%,
+            #03030c 100%
+        );
 }
 
-/* Outer glowing portal */
+/* OUTER GLOWING PORTAL */
 
 .rahul-portal .portal-ring {
     border: 8px solid #67eaff;
+
     box-shadow:
         0 0 20px #67eaff,
         0 0 55px #7444ff,
@@ -1411,12 +1415,13 @@ body.rahul-world {
         inset 0 0 35px #a9faff;
 }
 
-/* Rotating psychedelic spiral */
+/* PSYCHEDELIC SPIRAL */
 
 .rahul-portal .portal-core {
     width: 230px;
     height: 230px;
     border-radius: 50%;
+
     background:
         repeating-conic-gradient(
             from 0deg,
@@ -1425,178 +1430,132 @@ body.rahul-world {
             #b52bff 24deg 36deg,
             #11102e 36deg 48deg
         );
+
     box-shadow:
         0 0 35px #6d36ff,
         0 0 75px #1bcbff,
         inset 0 0 35px #05051c;
 }
 
-.rahul-portal .portal-hand {
+/* =====================================
+   ELECTRIC LIGHTNING BOLT
+===================================== */
+
+.portal-lightning {
     position: absolute;
-    z-index: 6;
-    width: 220px;
+    z-index: 7;
+
+    width: 180px;
     height: 280px;
+
     opacity: 0;
-    transform: translateY(120px) scale(0.35);
-    filter:
-        drop-shadow(0 0 12px rgba(83, 40, 190, 0.8))
-        drop-shadow(0 0 25px rgba(30, 205, 255, 0.35));
+    transform: scale(0.2) rotate(-12deg);
 }
 
-/* The hand silhouette */
-
-.shadow-hand {
-    position: relative;
+.portal-lightning svg {
     width: 100%;
     height: 100%;
+    overflow: visible;
 }
 
-/* Palm */
+/* Purple outer glow */
 
-.shadow-hand .palm {
-    position: absolute;
-    width: 105px;
-    height: 125px;
-    left: 58px;
-    top: 105px;
-    background: linear-gradient(135deg, #29243d, #080811 70%);
-    border-radius: 48% 48% 35% 35%;
-    box-shadow:
-        inset -12px -8px 20px #03030a,
-        inset 5px 5px 15px #65558c;
-    transform: rotate(-8deg);
+.lightning-glow {
+    fill: none;
+    stroke: #a34dff;
+    stroke-width: 24;
+    stroke-linejoin: bevel;
+
+    filter: blur(12px);
 }
 
-/* Wrist */
+/* Bright electric centre */
 
-.shadow-hand .wrist {
-    position: absolute;
-    width: 78px;
-    height: 105px;
-    left: 72px;
-    top: 200px;
-    background: linear-gradient(90deg, #080811, #302642, #080811);
-    border-radius: 20% 20% 45% 45%;
-    transform: rotate(-8deg);
+.lightning-bolt {
+    fill: #b9faff;
+    stroke: #39dfff;
+    stroke-width: 5;
+    stroke-linejoin: bevel;
+
+    filter:
+        drop-shadow(0 0 12px #42eaff)
+        drop-shadow(0 0 25px #7444ff);
 }
 
-/* Fingers */
-
-.shadow-hand .finger {
-    position: absolute;
-    display: block;
-    width: 27px;
-    background: linear-gradient(90deg, #090911, #3b304e, #0b0a14);
-    border-radius: 18px;
-    transform-origin: bottom center;
-    box-shadow: inset 3px 0 5px rgba(180, 155, 255, 0.2);
-}
-
-/* Index finger — curling inward */
-
-.shadow-hand .finger-one {
-    height: 112px;
-    left: 130px;
-    top: 8px;
-    transform: rotate(24deg);
-    border-radius: 18px 18px 12px 12px;
-}
-
-.shadow-hand .finger-one::after {
-    content: "";
-    position: absolute;
-    width: 29px;
-    height: 31px;
-    right: -7px;
-    top: 70px;
-    background: #211a32;
-    border-radius: 50%;
-    transform: rotate(35deg);
-}
-
-.shadow-hand .finger-two {
-    height: 105px;
-    left: 93px;
-    top: 18px;
-    transform: rotate(7deg);
-}
-
-.shadow-hand .finger-three {
-    height: 92px;
-    left: 57px;
-    top: 34px;
-    transform: rotate(-9deg);
-}
-
-.shadow-hand .finger-four {
-    height: 77px;
-    left: 28px;
-    top: 64px;
-    transform: rotate(-22deg);
-}
-
-/* Thumb */
-
-.shadow-hand .thumb {
-    position: absolute;
-    width: 30px;
-    height: 88px;
-    left: 145px;
-    top: 100px;
-    background: linear-gradient(90deg, #090911, #382d4a, #090911);
-    border-radius: 20px;
-    transform: rotate(-42deg);
-    transform-origin: top center;
-}
-
-/* Rahul's portal entrance animation */
+/* =====================================
+   RAHUL PORTAL ENTRANCE
+===================================== */
 
 .rahul-active .rahul-portal {
     opacity: 1;
 }
 
+/* Portal expands */
+
 .rahul-active .rahul-portal .portal-ring {
-    animation: psychedelicPortalOpen 1.5s ease-in-out forwards;
+    animation:
+        psychedelicPortalOpen 1.5s ease-in-out forwards;
 }
+
+/* Spiral rotates and expands */
 
 .rahul-active .rahul-portal .portal-core {
-    animation: spiralOpen 1.5s ease-in-out forwards;
+    animation:
+        spiralOpen 1.5s ease-in-out forwards;
 }
 
-.rahul-active .portal-hand {
-    animation: shadowHandEmerges 1.5s ease-out forwards;
+/* Lightning emerges */
+
+.rahul-active .portal-lightning {
+    animation:
+        lightningEmerges 1.5s ease-out forwards;
 }
 
-/* Spiral movement */
+/* =====================================
+   SPIRAL ANIMATION
+===================================== */
 
 @keyframes spiralOpen {
+
     0% {
         transform: scale(0.05) rotate(0deg);
     }
+
     55% {
         transform: scale(1) rotate(360deg);
     }
+
     100% {
         transform: scale(9) rotate(720deg);
     }
 }
 
-/* Hand slowly reaches out */
+/* =====================================
+   LIGHTNING ANIMATION
+===================================== */
 
-@keyframes shadowHandEmerges {
+@keyframes lightningEmerges {
+
     0% {
         opacity: 0;
-        transform: translateY(120px) scale(0.35) rotate(-12deg);
+        transform: scale(0.2) rotate(-12deg);
     }
-    45% {
+
+    35% {
         opacity: 1;
-        transform: translateY(30px) scale(0.8) rotate(-5deg);
+        transform: scale(0.8) rotate(8deg);
     }
+
+    65% {
+        transform: scale(1.15) rotate(-5deg);
+    }
+
     100% {
         opacity: 1;
-        transform: translateY(-10px) scale(1.1) rotate(0deg);
+        transform: scale(1) rotate(0deg);
     }
 }
+
 
 /* =====================================
    ANIMATION KEYFRAMES
