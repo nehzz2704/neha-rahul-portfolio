@@ -4007,3 +4007,161 @@ body.rahul-world {
     transform: scale(.68);
   }
 }
+
+/* =========================================================
+   RAHUL — CLEANER ARCADE FINISH
+   Keeps the cyan machine borders and existing interactions.
+========================================================= */
+
+/* Quiet the page background while retaining the blue-purple atmosphere. */
+body.rahul-world {
+  background-color: #08091f !important;
+  background-image:
+    radial-gradient(ellipse at 16% 18%, rgba(0, 166, 220, .19), transparent 38%),
+    radial-gradient(ellipse at 84% 26%, rgba(125, 45, 205, .22), transparent 42%),
+    radial-gradient(ellipse at 50% 92%, rgba(22, 65, 150, .2), transparent 48%),
+    linear-gradient(135deg, #08091f, #111039 58%, #08091f) !important;
+  background-attachment: fixed !important;
+}
+
+/* Replace the animated rings and radial rays with soft ambient light. */
+body.rahul-world::before {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background:
+    radial-gradient(ellipse at 18% 22%, rgba(0, 205, 255, .13), transparent 42%),
+    radial-gradient(ellipse at 82% 72%, rgba(145, 55, 255, .14), transparent 46%) !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Remove extra floating symbols and control prompts. */
+.psychedelic-game .psychedelic-orbit,
+.psychedelic-game .arcade-back-decoration,
+.psychedelic-game .arcade-lights,
+.psychedelic-game .arcade-particles,
+.psychedelic-game .arcade-controls,
+.psychedelic-game .arcade-interaction-prompt {
+  display: none !important;
+}
+
+/* A calmer room: same dark neon palette, fewer competing patterns. */
+.psychedelic-game .arcade-viewport {
+  background: radial-gradient(ellipse at 50% 30%, #17234b 0%, #0c102b 55%, #08091c 100%);
+  /* Keep the existing glowing cyan viewport border unchanged. */
+}
+
+.psychedelic-game .arcade-scene {
+  background:
+    radial-gradient(ellipse at 50% 34%, rgba(82, 55, 160, .2), transparent 58%),
+    linear-gradient(180deg, #0d102b 0%, #11102f 58%, #090a1d 100%);
+}
+
+.psychedelic-game .arcade-ceiling {
+  background: linear-gradient(180deg, #090b20 0%, #17143a 100%);
+  border-bottom: 1px solid rgba(93, 234, 255, .16);
+}
+
+.psychedelic-game .arcade-wall {
+  background: linear-gradient(135deg, #0b1028 0%, #17133b 70%, #10102d 100%);
+}
+
+.psychedelic-game .arcade-back-wall {
+  left: 33%;
+  right: 33%;
+  width: auto;
+  top: 15%;
+  height: 40%;
+  background: linear-gradient(145deg, #17183e, #0b1027 82%);
+  border: 2px solid rgba(139, 69, 255, .82);
+  box-shadow: 0 0 22px rgba(123, 50, 255, .42), inset 0 0 24px rgba(0, 207, 255, .08);
+}
+
+.psychedelic-game .arcade-neon-sign {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.psychedelic-game .arcade-neon-sign span {
+  display: none;
+}
+
+.psychedelic-game .arcade-neon-sign h2 {
+  margin: 0;
+  font-size: clamp(12px, 1.65vw, 21px);
+  letter-spacing: 1.5px;
+}
+
+.psychedelic-game .arcade-floor {
+  background: linear-gradient(180deg, #17143b 0%, #0a0b20 90%);
+}
+
+.psychedelic-game .arcade-floor-grid {
+  background:
+    linear-gradient(rgba(0, 220, 255, .12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 220, 255, .12) 1px, transparent 1px);
+  background-size: 76px 58px;
+  opacity: .22;
+}
+
+/* Five cabinets: one balanced row, equal size and consistent spacing.
+   Their cyan borders and neon screen effects are deliberately preserved. */
+.psychedelic-game .arcade-machine {
+  width: clamp(96px, 10.8%, 132px);
+  height: 41%;
+  min-height: 180px;
+  top: 42%;
+  padding: 10px 8px;
+  transform: none;
+}
+
+.psychedelic-game .machine-one { left: 6%; right: auto; top: 42%; }
+.psychedelic-game .machine-two { left: 25%; right: auto; top: 42%; }
+.psychedelic-game .machine-three { left: 44%; right: auto; top: 42%; }
+.psychedelic-game .machine-four { left: 63%; right: auto; top: 42%; }
+.psychedelic-game .machine-five { left: 82%; right: auto; top: 42%; }
+
+.psychedelic-game .arcade-machine:hover,
+.psychedelic-game .arcade-machine:focus-visible {
+  transform: translateY(-7px) scale(1.035);
+  /* Preserve the existing glowing cyan cabinet border and glow. */
+}
+
+@media (max-width: 760px) {
+  .psychedelic-game .arcade-back-wall {
+    left: 31%;
+    right: 31%;
+    top: 12%;
+    height: 34%;
+  }
+
+  .psychedelic-game .arcade-machine {
+    top: 44%;
+    height: 31%;
+    min-height: 142px;
+  }
+
+  .psychedelic-game .machine-one { left: 2%; top: 44%; }
+  .psychedelic-game .machine-two { left: 21%; top: 44%; }
+  .psychedelic-game .machine-three { left: 41%; top: 44%; }
+  .psychedelic-game .machine-four { left: 61%; top: 44%; }
+  .psychedelic-game .machine-five { left: 81%; top: 44%; }
+}
+
+@media (max-width: 420px) {
+  .psychedelic-game .arcade-machine {
+    width: 18%;
+    min-height: 126px;
+    height: 29%;
+    top: 47%;
+    padding: 6px 3px;
+  }
+
+  .psychedelic-game .machine-one { left: 1%; top: 47%; }
+  .psychedelic-game .machine-two { left: 21%; top: 47%; }
+  .psychedelic-game .machine-three { left: 41%; top: 47%; }
+  .psychedelic-game .machine-four { left: 61%; top: 47%; }
+  .psychedelic-game .machine-five { left: 81%; top: 47%; }
+}
