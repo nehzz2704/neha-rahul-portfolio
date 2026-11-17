@@ -4,281 +4,404 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Neha's Enchanted Universe</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="portfolio-page neha-world">
+<body class="portfolio-page neha-world enchanted-game">
 
-  <!-- MAGICAL DECORATIONS -->
-  <div class="magic-sparkles" aria-hidden="true">
-    ✦　✧　⋆　♡　✧　✦　⋆　✧
-  </div>
-
-  <!-- NAVIGATION -->
-  <nav class="portfolio-nav">
+  <!-- GAME NAVIGATION -->
+  <nav class="portfolio-nav corridor-nav">
     <a href="index.html" class="back-link">← PLAYER SELECT</a>
-    <a href="#about">ABOUT</a>
-    <a href="#skills">MY MAGIC</a>
-    <a href="#projects">MY CREATIONS</a>
-    <a href="#contact">CONTACT</a>
+    <span class="corridor-world-name">NEHA'S ENCHANTED UNIVERSE ♡</span>
   </nav>
 
-  <!-- HERO -->
-  <header class="portfolio-hero neha-hero">
 
-    <p class="eyebrow">✧ WELCOME TO MY LITTLE UNIVERSE ✧</p>
+  <!-- ENCHANTED CORRIDOR -->
+  <main>
 
-    <div class="magic-emblem">☽ ✦ ♡ ✦ ☾</div>
+    <section class="enchanted-library" id="library">
 
-    <h1>HELLO, DREAMER!</h1>
-
-    <h2 class="neha-name">I'm Neha ♡</h2>
-
-    <p class="subtitle">
-      Animation Artist · Character Creator · World Dreamer
-    </p>
-
-    <p class="hero-description">
-      A little imagination, a little magic,
-      and a whole lot of stories waiting to be told.
-    </p>
-
-    <div class="neha-character-placeholder">
-      <div class="character-placeholder-inner">
-        <span>✧ YOUR CHARACTER ✧</span>
-        <p>Magical artwork coming soon!</p>
-        <span class="placeholder-star">☆</span>
-      </div>
-    </div>
-
-    <a href="#projects" class="select-button">
-      EXPLORE MY WORLD ✦
-    </a>
-
-    <p class="scroll-hint">SCROLL TO DISCOVER ↓</p>
-
-  </header>
-  
-  <!-- ENCHANTED LIBRARY -->
-  <section class="enchanted-library" id="library">
-
-    <div class="library-heading">
-      <p class="eyebrow">✧ A LITTLE PLACE OF MAGIC ✧</p>
-      <h2>THE ENCHANTED LIBRARY</h2>
-      <p>Five little books. Five little adventures. Which one will you open?</p>
-    </div>
-
-    <div class="library-room">
-
-      <div class="library-butterflies" aria-hidden="true">
-        🦋　✧　🦋　⋆　✧　🦋
+      <!-- INTRODUCTION -->
+      <div class="corridor-intro">
+        <p>✧ WELCOME TO MY LITTLE WORLD ✧</p>
+        <h1>THE ENCHANTED PATH</h1>
+        <span>A little journey through my imagination...</span>
       </div>
 
-      <div class="library-pedestals">
 
-        <button class="library-pedestal" type="button" data-book="about">
-          <span class="pedestal-book book-about">
-            <span class="book-decoration">♡</span>
-            <span class="book-title">ABOUT<br>ME</span>
-          </span>
-          <span class="pedestal-base"></span>
-          <span class="pedestal-label">01 · ABOUT ME</span>
-        </button>
+      <!-- FIRST PERSON GAME VIEW -->
+      <div class="corridor-viewport">
 
-        <button class="library-pedestal" type="button" data-book="creations">
-          <span class="pedestal-book book-creations">
-            <span class="book-decoration">✧</span>
-            <span class="book-title">MY<br>CREATIONS</span>
-          </span>
-          <span class="pedestal-base"></span>
-          <span class="pedestal-label">02 · CREATIONS</span>
-        </button>
+        <div class="corridor-scene" id="corridorScene">
 
-        <button class="library-pedestal" type="button" data-book="status">
-          <span class="pedestal-book book-status">
-            <span class="book-decoration">☾</span>
-            <span class="book-title">CURRENT<br>STATUS</span>
-          </span>
-          <span class="pedestal-base"></span>
-          <span class="pedestal-label">03 · STATUS</span>
-        </button>
+          <!-- CEILING -->
+          <div class="corridor-ceiling"></div>
 
-        <button class="library-pedestal" type="button" data-book="skills">
-          <span class="pedestal-book book-skills">
-            <span class="book-decoration">✦</span>
-            <span class="book-title">MY MAGIC<br>TOOLKIT</span>
-          </span>
-          <span class="pedestal-base"></span>
-          <span class="pedestal-label">04 · MY SKILLS</span>
-        </button>
+          <!-- LEFT WALL -->
+          <div class="corridor-wall corridor-wall-left"></div>
 
-        <button class="library-pedestal" type="button" data-book="contact">
-          <span class="pedestal-book book-contact">
-            <span class="book-decoration">❀</span>
-            <span class="book-title">RESUME &<br>CONTACT</span>
-          </span>
-          <span class="pedestal-base"></span>
-          <span class="pedestal-label">05 · CONNECT</span>
-        </button>
+          <!-- RIGHT WALL -->
+          <div class="corridor-wall corridor-wall-right"></div>
+
+          <!-- FLOOR -->
+          <div class="corridor-floor"></div>
+
+          <!-- DISTANT END OF THE CORRIDOR -->
+          <div class="corridor-end">
+            <div class="corridor-end-glow">✧</div>
+            <span>A WORLD OF STORIES</span>
+          </div>
+
+
+          <!-- MAGICAL WALL LIGHTS -->
+          <div class="corridor-lights" aria-hidden="true">
+            <span class="corridor-lamp lamp-one">✦</span>
+            <span class="corridor-lamp lamp-two">✧</span>
+            <span class="corridor-lamp lamp-three">✦</span>
+            <span class="corridor-lamp lamp-four">✧</span>
+          </div>
+
+
+          <!-- BOOK 01 — ABOUT ME -->
+          <button
+            class="corridor-book book-one"
+            type="button"
+            data-book="about"
+            aria-label="Open About Me book">
+
+            <span class="corridor-book-symbol">♡</span>
+            <span class="corridor-book-title">ABOUT ME</span>
+            <span class="corridor-book-number">01</span>
+          </button>
+
+
+          <!-- BOOK 02 — MY CREATIONS -->
+          <button
+            class="corridor-book book-two"
+            type="button"
+            data-book="creations"
+            aria-label="Open My Creations book">
+
+            <span class="corridor-book-symbol">✧</span>
+            <span class="corridor-book-title">MY CREATIONS</span>
+            <span class="corridor-book-number">02</span>
+          </button>
+
+
+          <!-- BOOK 03 — CURRENT STATUS -->
+          <button
+            class="corridor-book book-three"
+            type="button"
+            data-book="status"
+            aria-label="Open Current Status book">
+
+            <span class="corridor-book-symbol">☾</span>
+            <span class="corridor-book-title">CURRENT STATUS</span>
+            <span class="corridor-book-number">03</span>
+          </button>
+
+
+          <!-- BOOK 04 — MY MAGIC TOOLKIT -->
+          <button
+            class="corridor-book book-four"
+            type="button"
+            data-book="skills"
+            aria-label="Open My Magic Toolkit book">
+
+            <span class="corridor-book-symbol">✦</span>
+            <span class="corridor-book-title">MY MAGIC TOOLKIT</span>
+            <span class="corridor-book-number">04</span>
+          </button>
+
+
+          <!-- BOOK 05 — RESUME AND CONTACT -->
+          <button
+            class="corridor-book book-five"
+            type="button"
+            data-book="contact"
+            aria-label="Open Resume and Contact book">
+
+            <span class="corridor-book-symbol">❀</span>
+            <span class="corridor-book-title">RESUME & CONTACT</span>
+            <span class="corridor-book-number">05</span>
+          </button>
+
+
+          <!-- FLOATING MAGICAL DETAILS -->
+          <div class="corridor-butterflies" aria-hidden="true">
+            🦋　✧　🦋　⋆　✧
+          </div>
+
+          <div class="corridor-sparkles" aria-hidden="true">
+            ✦　⋆　✧　♡　✦　✧
+          </div>
+
+
+          <!-- BOOK INTERACTION PROMPT -->
+          <div class="book-interaction-prompt" id="bookPrompt">
+            <span>✧</span>
+            <p>APPROACH A BOOK TO EXPLORE</p>
+          </div>
+
+        </div>
+
+
+        <!-- MOVEMENT INSTRUCTIONS -->
+        <div class="corridor-controls">
+
+          <div class="keyboard-controls" aria-label="Movement controls">
+            <span class="key-up">W</span>
+            <span class="key-left">A</span>
+            <span class="key-down">S</span>
+            <span class="key-right">D</span>
+          </div>
+
+          <p>USE WASD OR ARROW KEYS TO EXPLORE</p>
+
+          <p class="corridor-mobile-hint">
+            TOUCH CONTROLS COMING SOON
+          </p>
+
+        </div>
 
       </div>
 
-      <p class="library-instruction">✧ EXPLORE THE LIBRARY · SELECT A BOOK ✧</p>
+    </section>
 
-    </div>
-  </section>
+  </main>
 
-  <!-- ABOUT -->
-  <section class="portfolio-section" id="about">
 
-    <p class="eyebrow">01 · THE DREAMER</p>
-    <h2>A LITTLE ABOUT ME ♡</h2>
+  <!-- 
+    PRESERVED PORTFOLIO CONTENT
 
-    <div class="neha-about-card">
-      <div class="about-decoration">✿</div>
+    These templates are hidden from the visible page.
+    We will connect their contents to the five books
+    using JavaScript in a later step.
+  -->
+
+
+  <!-- BOOK 01 — ABOUT ME AND EDUCATION -->
+  <template id="book-about-content">
+
+    <section class="portfolio-section" id="about">
+
+      <p class="eyebrow">THE DREAMER</p>
+      <h2>A LITTLE ABOUT ME ♡</h2>
+
+      <div class="neha-about-card">
+
+        <div class="about-decoration">✿</div>
+
+        <p class="section-description">
+          Hello! I'm Neha, an Animation and VFX student who loves
+          bringing imagination to life.
+
+          I'm fascinated by characters, storytelling, visual worlds
+          and the little details that make an idea feel magical.
+
+          This is my creative space, where I share my journey,
+          experiments and creations.
+        </p>
+
+        <div class="about-decoration">✧</div>
+
+      </div>
+
+    </section>
+
+
+    <section class="portfolio-section" id="education">
+
+      <p class="eyebrow">MY JOURNEY</p>
+      <h2>THE ADVENTURE SO FAR ✨</h2>
+
+      <div class="neha-info-card">
+
+        <span class="card-symbol">🎓</span>
+
+        <h3>B.Sc. Animation & VFX</h3>
+
+        <p>Noorul Islam Centre for Higher Education</p>
+
+        <p class="small-note">
+          Currently pursuing my degree
+        </p>
+
+      </div>
+
+    </section>
+
+  </template>
+
+
+  <!-- BOOK 02 — MY CREATIONS -->
+  <template id="book-creations-content">
+
+    <section class="portfolio-section" id="projects">
+
+      <p class="eyebrow">MY LITTLE CREATIONS</p>
+
+      <h2>MADE WITH IMAGINATION ♡</h2>
 
       <p class="section-description">
-        Hello! I'm Neha, an Animation and VFX student who loves
-        bringing imagination to life.
-
-        I'm fascinated by characters, storytelling, visual worlds
-        and the little details that make an idea feel magical.
-
-        This is my creative space, where I share my journey,
-        experiments and creations.
+        A growing collection of projects, experiments and
+        creative adventures.
       </p>
 
-      <div class="about-decoration">✧</div>
-    </div>
+      <div class="project-grid">
 
-  </section>
+        <article class="project-placeholder">
+          <div class="project-art">✧</div>
+          <span>PROJECT 01</span>
+          <h3>3D MODELLING</h3>
+          <p>A little world in three dimensions.</p>
+          <small>Artwork coming soon</small>
+        </article>
 
-  <!-- EDUCATION -->
-  <section class="portfolio-section" id="education">
+        <article class="project-placeholder">
+          <div class="project-art">♡</div>
+          <span>PROJECT 02</span>
+          <h3>CHARACTER ANIMATION</h3>
+          <p>Giving characters life and personality.</p>
+          <small>Artwork coming soon</small>
+        </article>
 
-    <p class="eyebrow">02 · MY JOURNEY</p>
-    <h2>THE ADVENTURE SO FAR ✨</h2>
+        <article class="project-placeholder">
+          <div class="project-art">☾</div>
+          <span>PROJECT 03</span>
+          <h3>2D & VFX</h3>
+          <p>Exploring motion, visuals and storytelling.</p>
+          <small>Artwork coming soon</small>
+        </article>
 
-    <div class="neha-info-card">
-      <span class="card-symbol">🎓</span>
-      <h3>B.Sc. Animation & VFX</h3>
-      <p>Noorul Islam Centre for Higher Education</p>
-      <p class="small-note">Currently pursuing my degree</p>
-    </div>
+        <article class="project-placeholder">
+          <div class="project-art">☆</div>
+          <span>PROJECT 04</span>
+          <h3>CREATIVE EXPERIMENTS</h3>
+          <p>Ideas, practice and happy accidents.</p>
+          <small>Artwork coming soon</small>
+        </article>
 
-  </section>
+      </div>
 
-  <!-- SKILLS -->
-  <section class="portfolio-section" id="skills">
+    </section>
 
-    <p class="eyebrow">03 · MY MAGIC TOOLKIT</p>
-    <h2>THINGS I CAN CREATE ✦</h2>
-
-    <p class="section-description">
-      Every artist has their own little collection of magic.
-      Here's what's in mine!
-    </p>
-
-    
-<div class="skill-list">
-  <span>✧ 3D Modelling</span>
-  <span>♡ Character Animation</span>
-  <span>✦ Rigging</span>
-  <span>☾ 2D Animation</span>
-  <span>✧ Autodesk Maya</span>
-  <span>♡ Adobe After Effects</span>
-  <span>✦ Adobe Animate</span>
-  <span>☾ Rotoscoping</span>
-  <span>✧ Keying</span>
-  <span>♡ Wire Removal</span>
-</div>
+  </template>
 
 
-  </section>
+  <!-- BOOK 03 — CURRENT STATUS -->
+  <template id="book-status-content">
 
-  <!-- PROJECTS -->
-  <section class="portfolio-section" id="projects">
+    <section class="portfolio-section">
 
-    <p class="eyebrow">04 · MY LITTLE CREATIONS</p>
-    <h2>MADE WITH IMAGINATION ♡</h2>
+      <p class="eyebrow">WHAT'S HAPPENING?</p>
 
-    <p class="section-description">
-      A growing collection of projects, experiments and
-      creative adventures.
-    </p>
+      <h2>MY CURRENT CHAPTER ✨</h2>
 
-    <div class="project-grid">
-
-      <article class="project-placeholder">
-        <div class="project-art">✧</div>
-        <span>PROJECT 01</span>
-        <h3>3D MODELLING</h3>
-        <p>A little world in three dimensions.</p>
-        <small>Artwork coming soon</small>
-      </article>
-
-      <article class="project-placeholder">
-        <div class="project-art">♡</div>
-        <span>PROJECT 02</span>
-        <h3>CHARACTER ANIMATION</h3>
-        <p>Giving characters life and personality.</p>
-        <small>Artwork coming soon</small>
-      </article>
-
-      <article class="project-placeholder">
-        <div class="project-art">☾</div>
-        <span>PROJECT 03</span>
-        <h3>2D & VFX</h3>
-        <p>Exploring motion, visuals and storytelling.</p>
-        <small>Artwork coming soon</small>
-      </article>
-
-      <article class="project-placeholder">
-        <div class="project-art">☆</div>
-        <span>PROJECT 04</span>
-        <h3>CREATIVE EXPERIMENTS</h3>
-        <p>Ideas, practice and happy accidents.</p>
-        <small>Artwork coming soon</small>
-      </article>
-
-    </div>
-
-  </section>
-
-  <!-- RESUME -->
-  <section class="portfolio-section" id="resume">
-
-    <p class="eyebrow">05 · MY LITTLE PASSPORT</p>
-    <h2>MY RESUME 🎀</h2>
-
-    <div class="neha-info-card">
-      <span class="card-symbol">💌</span>
-      <h3>Want to know more?</h3>
-      <p>My CV will be available here soon.</p>
-      <p class="small-note">Come back for updates!</p>
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section class="portfolio-section" id="contact">
-
-    <p class="eyebrow">06 · SEND A LITTLE MAGIC</p>
-    <h2>LET'S CONNECT ♡</h2>
-
-    <div class="neha-contact-card">
-      <p>
-        Have a project, opportunity or creative idea?
-        I'd love to hear from you!
+      <p class="section-description">
+        A little space for my current creative journey,
+        learning adventures and upcoming projects.
       </p>
 
-      <p class="contact-placeholder">
-        ✉ Email details coming soon
-      </p>
-    </div>
+      <div class="neha-info-card">
 
-  </section>
+        <span class="card-symbol">♡</span>
+
+        <h3>My Creative Journey</h3>
+
+        <p>More updates coming soon!</p>
+
+      </div>
+
+    </section>
+
+  </template>
+
+
+  <!-- BOOK 04 — MY MAGIC TOOLKIT -->
+  <template id="book-skills-content">
+
+    <section class="portfolio-section" id="skills">
+
+      <p class="eyebrow">MY MAGIC TOOLKIT</p>
+
+      <h2>THINGS I CAN CREATE ✦</h2>
+
+      <p class="section-description">
+        Every artist has their own little collection of magic.
+        Here's what's in mine!
+      </p>
+
+      <div class="skill-list">
+
+        <span>✧ 3D Modelling</span>
+        <span>♡ Character Animation</span>
+        <span>✦ Rigging</span>
+        <span>☾ 2D Animation</span>
+        <span>✧ Autodesk Maya</span>
+        <span>♡ Adobe After Effects</span>
+        <span>✦ Adobe Animate</span>
+        <span>☾ Rotoscoping</span>
+        <span>✧ Keying</span>
+        <span>♡ Wire Removal</span>
+
+      </div>
+
+    </section>
+
+  </template>
+
+
+  <!-- BOOK 05 — RESUME AND CONTACT -->
+  <template id="book-contact-content">
+
+    <section class="portfolio-section" id="resume">
+
+      <p class="eyebrow">MY LITTLE PASSPORT</p>
+
+      <h2>MY RESUME 🎀</h2>
+
+      <div class="neha-info-card">
+
+        <span class="card-symbol">💌</span>
+
+        <h3>Want to know more?</h3>
+
+        <p>My CV will be available here soon.</p>
+
+        <p class="small-note">Come back for updates!</p>
+
+      </div>
+
+    </section>
+
+
+    <section class="portfolio-section" id="contact">
+
+      <p class="eyebrow">SEND A LITTLE MAGIC</p>
+
+      <h2>LET'S CONNECT ♡</h2>
+
+      <div class="neha-contact-card">
+
+        <p>
+          Have a project, opportunity or creative idea?
+          I'd love to hear from you!
+        </p>
+
+        <p class="contact-placeholder">
+          ✉ Email details coming soon
+        </p>
+
+      </div>
+
+    </section>
+
+  </template>
+
 
   <!-- FOOTER -->
   <footer class="neha-footer">
