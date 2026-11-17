@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="portfolio-page rahul-world">
+<body class="portfolio-page rahul-world psychedelic-game">
 
   <!-- COSMIC DECORATIONS -->
   <div class="psychedelic-orbit" aria-hidden="true">
@@ -16,199 +16,350 @@
   </div>
 
   <!-- NAVIGATION -->
-  <nav class="portfolio-nav">
+  <nav class="portfolio-nav arcade-nav">
     <a href="index.html" class="back-link">← PLAYER SELECT</a>
-    <a href="#about">IDENTITY</a>
-    <a href="#skills">ABILITIES</a>
-    <a href="#projects">CREATIONS</a>
-    <a href="#contact">CONTACT</a>
+    <span>RAHUL'S ARCADE DIMENSION ◈</span>
   </nav>
 
-  <!-- HERO -->
-  <header class="portfolio-hero rahul-hero">
+  <!-- ARCADE INTRO -->
+  <main class="arcade-game">
 
-    <p class="eyebrow">WELCOME TO ANOTHER DIMENSION</p>
+    <header class="arcade-intro">
+      <p>WELCOME TO ANOTHER DIMENSION</p>
+      <h1>BEYOND REALITY.</h1>
+      <span>PLAYER 02 · RAHUL'S ARCADE</span>
+      <p class="arcade-instruction">
+        Five machines. Five dimensions. Explore them all.
+      </p>
+    </header>
 
-    <div class="rahul-emblem">◈ ⟁ ◉ ⟁ ◈</div>
+    <!-- ARCADE ROOM -->
+    <section class="arcade-viewport" id="arcadeViewport">
 
-    <h1>BEYOND REALITY.</h1>
+      <div class="arcade-scene" id="arcadeScene">
 
-    <h2 class="rahul-name">I'M RAHUL.</h2>
+        <!-- ROOM ENVIRONMENT -->
+        <div class="arcade-ceiling"></div>
 
-    <p class="subtitle">
-      3D Artist · Character Creator · World Builder
-    </p>
+        <div class="arcade-wall arcade-wall-left"></div>
+        <div class="arcade-wall arcade-wall-right"></div>
 
-    <p class="hero-description">
-      Imagining the impossible. Building the unreal.
-      Creating worlds that don't exist... yet.
-    </p>
+        <div class="arcade-back-wall">
+          <div class="arcade-neon-sign">
+            <span>◈</span>
+            <h2>BEYOND REALITY</h2>
+            <span>◉</span>
+          </div>
+        </div>
 
-    <div class="rahul-character-placeholder">
-      <div class="character-placeholder-inner">
-        <span>PLAYER 02</span>
-        <p>Character data loading...</p>
-        <span class="placeholder-star">◉</span>
+        <div class="arcade-floor"></div>
+
+        <div class="arcade-floor-grid"></div>
+
+        <!-- NEON LIGHTS -->
+        <div class="arcade-lights" aria-hidden="true">
+          <span class="arcade-light light-one">✦</span>
+          <span class="arcade-light light-two">◉</span>
+          <span class="arcade-light light-three">✧</span>
+          <span class="arcade-light light-four">◎</span>
+        </div>
+
+        <!-- ARCADE MACHINES -->
+        <div class="arcade-machines">
+
+          <!-- MACHINE 01: PLAYER PROFILE -->
+          <button class="arcade-machine machine-one"
+                  data-machine="profile"
+                  type="button"
+                  aria-label="Open Player Profile">
+
+            <span class="machine-number">01</span>
+            <span class="machine-screen">
+              <span class="screen-symbol">◈</span>
+              <span class="screen-text">PLAYER 02</span>
+            </span>
+            <span class="machine-name">PLAYER PROFILE</span>
+            <span class="machine-controls">●　●　●</span>
+            <span class="machine-base"></span>
+
+          </button>
+
+          <!-- MACHINE 02: CREATION MODE -->
+          <button class="arcade-machine machine-two"
+                  data-machine="creations"
+                  type="button"
+                  aria-label="Open Creation Mode">
+
+            <span class="machine-number">02</span>
+            <span class="machine-screen">
+              <span class="screen-symbol">◎</span>
+              <span class="screen-text">CREATE MODE</span>
+            </span>
+            <span class="machine-name">CREATION MODE</span>
+            <span class="machine-controls">◉　●　◉</span>
+            <span class="machine-base"></span>
+
+          </button>
+
+          <!-- MACHINE 03: PLAYER STATUS -->
+          <button class="arcade-machine machine-three"
+                  data-machine="status"
+                  type="button"
+                  aria-label="Open Player Status">
+
+            <span class="machine-number">03</span>
+            <span class="machine-screen">
+              <span class="screen-symbol">⟁</span>
+              <span class="screen-text">STATUS</span>
+            </span>
+            <span class="machine-name">PLAYER STATUS</span>
+            <span class="machine-controls">●　◉　●</span>
+            <span class="machine-base"></span>
+
+          </button>
+
+          <!-- MACHINE 04: SKILL TREE -->
+          <button class="arcade-machine machine-four"
+                  data-machine="skills"
+                  type="button"
+                  aria-label="Open Skill Tree">
+
+            <span class="machine-number">04</span>
+            <span class="machine-screen">
+              <span class="screen-symbol">⚡</span>
+              <span class="screen-text">SKILL TREE</span>
+            </span>
+            <span class="machine-name">SKILL TREE</span>
+            <span class="machine-controls">◈　●　◈</span>
+            <span class="machine-base"></span>
+
+          </button>
+
+          <!-- MACHINE 05: PLAYER DATA -->
+          <button class="arcade-machine machine-five"
+                  data-machine="data"
+                  type="button"
+                  aria-label="Open Player Data">
+
+            <span class="machine-number">05</span>
+            <span class="machine-screen">
+              <span class="screen-symbol">▣</span>
+              <span class="screen-text">PLAYER DATA</span>
+            </span>
+            <span class="machine-name">PLAYER DATA</span>
+            <span class="machine-controls">●　●　◉</span>
+            <span class="machine-base"></span>
+
+          </button>
+
+        </div>
+
+        <!-- FLOATING COSMIC DECORATIONS -->
+        <div class="arcade-particles" aria-hidden="true">
+          ◈　✦　◎　✧　◉　⟁　✦
+        </div>
+
+        <div class="arcade-glow" aria-hidden="true"></div>
+
       </div>
+
+      <!-- INTERACTION PROMPT -->
+      <div class="arcade-interaction-prompt" id="arcadePrompt">
+        EXPLORE THE ARCADE
+      </div>
+
+    </section>
+
+    <!-- MOVEMENT CONTROLS -->
+    <div class="arcade-controls">
+
+      <div class="arcade-keyboard">
+        <span>W</span>
+        <div>
+          <span>A</span>
+          <span>S</span>
+          <span>D</span>
+        </div>
+      </div>
+
+      <p>WASD / ARROW KEYS TO EXPLORE</p>
+      <p class="arcade-mobile-hint">
+        MOBILE MOVEMENT CONTROLS WILL APPEAR HERE
+      </p>
+
     </div>
 
-    <a href="#projects" class="select-button">
-      ENTER THE DIMENSION ↗
-    </a>
+  </main>
 
-    <p class="scroll-hint">DESCEND INTO THE UNKNOWN ↓</p>
+  <!-- MACHINE CONTENT: PLAYER PROFILE -->
+  <template id="machine-profile-content">
 
-  </header>
+    <div class="machine-content profile-content">
 
-  <!-- ABOUT -->
-  <section class="portfolio-section" id="about">
+      <p class="eyebrow">01 · THE PLAYER</p>
+      <h2>WHO AM I?</h2>
 
-    <p class="eyebrow">01 · THE CREATOR</p>
-    <h2>WHO AM I?</h2>
+      <div class="rahul-about-card">
+        <p class="section-description">
+          Hello! I'm Rahul, an Animation and VFX student with an
+          interest in 3D modelling, character design and animation.
 
-    <div class="rahul-about-card">
+          I enjoy creating objects, characters and environments,
+          turning ideas into digital worlds and experimenting
+          with visual possibilities.
+
+          This is where my creative work lives.
+        </p>
+      </div>
+
+      <div class="rahul-info-card">
+        <span class="card-symbol">◈</span>
+        <h3>B.Sc. Animation & VFX</h3>
+        <p>Noorul Islam Centre for Higher Education</p>
+        <p class="small-note">Currently pursuing my degree</p>
+      </div>
+
+    </div>
+
+  </template>
+
+  <!-- MACHINE CONTENT: CREATION MODE -->
+  <template id="machine-creations-content">
+
+    <div class="machine-content creations-content">
+
+      <p class="eyebrow">02 · DIGITAL CREATIONS</p>
+      <h2>BUILT FROM NOTHING.</h2>
+
       <p class="section-description">
-        Hello! I'm Rahul, an Animation and VFX student with an
-        interest in 3D modelling, character design and animation.
-
-        I enjoy creating objects, characters and environments,
-        turning ideas into digital worlds and experimenting
-        with visual possibilities.
-
-        This is where my creative work lives.
-      </p>
-    </div>
-
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="portfolio-section" id="education">
-
-    <p class="eyebrow">02 · THE ORIGIN</p>
-    <h2>MY JOURNEY</h2>
-
-    <div class="rahul-info-card">
-      <span class="card-symbol">◈</span>
-      <h3>B.Sc. Animation & VFX</h3>
-      <p>Noorul Islam Centre for Higher Education</p>
-      <p class="small-note">Currently pursuing my degree</p>
-    </div>
-
-  </section>
-
-  <!-- SKILLS -->
-  <section class="portfolio-section" id="skills">
-
-    <p class="eyebrow">03 · SYSTEM ABILITIES</p>
-    <h2>MY TOOLKIT</h2>
-
-    <p class="section-description">
-      The tools and techniques behind the worlds I create.
-    </p>
-
-   
-<div class="skill-list">
-  <span>◈ 3D Modelling</span>
-  <span>◉ Character Design</span>
-  <span>⟁ Texturing</span>
-  <span>✦ Rigging</span>
-  <span>◎ Animation</span>
-  <span>◈ Autodesk Maya</span>
-  <span>◉ Adobe After Effects</span>
-  <span>⟁ Adobe Animate</span>
-  <span>✦ Rotoscoping</span>
-  <span>◎ Keying</span>
-  <span>◈ Wire Removal</span>
-</div>
-
-
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="portfolio-section" id="projects">
-
-    <p class="eyebrow">04 · DIGITAL CREATIONS</p>
-    <h2>BUILT FROM NOTHING.</h2>
-
-    <p class="section-description">
-      Models, environments, characters and experiments
-      from different corners of my imagination.
-    </p>
-
-    <div class="project-grid">
-
-      <article class="project-placeholder">
-        <div class="project-art">◈</div>
-        <span>FILE 001</span>
-        <h3>3D MODELLING</h3>
-        <p>Building objects from digital space.</p>
-        <small>Data incoming...</small>
-      </article>
-
-      <article class="project-placeholder">
-        <div class="project-art">◎</div>
-        <span>FILE 002</span>
-        <h3>CHARACTER DESIGN</h3>
-        <p>Giving imaginary beings an identity.</p>
-        <small>Data incoming...</small>
-      </article>
-
-      <article class="project-placeholder">
-        <div class="project-art">⟁</div>
-        <span>FILE 003</span>
-        <h3>ENVIRONMENT ART</h3>
-        <p>Creating places beyond reality.</p>
-        <small>Data incoming...</small>
-      </article>
-
-      <article class="project-placeholder">
-        <div class="project-art">✦</div>
-        <span>FILE 004</span>
-        <h3>EXPERIMENTAL ART</h3>
-        <p>Testing ideas and exploring visuals.</p>
-        <small>Data incoming...</small>
-      </article>
-
-    </div>
-
-  </section>
-
-  <!-- RESUME -->
-  <section class="portfolio-section" id="resume">
-
-    <p class="eyebrow">05 · CREATOR PROFILE</p>
-    <h2>MY RESUME</h2>
-
-    <div class="rahul-info-card">
-      <span class="card-symbol">▣</span>
-      <h3>Creator profile</h3>
-      <p>My CV will be available here soon.</p>
-      <p class="small-note">Profile update pending.</p>
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section class="portfolio-section" id="contact">
-
-    <p class="eyebrow">06 · ESTABLISH CONNECTION</p>
-    <h2>LET'S CREATE SOMETHING.</h2>
-
-    <div class="rahul-contact-card">
-      <p>
-        Have a project, opportunity or idea?
-        Let's bring something interesting into existence.
+        Models, environments, characters and experiments
+        from different corners of my imagination.
       </p>
 
-      <p class="contact-placeholder">
-        CONNECTION DETAILS COMING SOON
-      </p>
+      <div class="project-grid">
+
+        <article class="project-placeholder">
+          <div class="project-art">◈</div>
+          <span>FILE 001</span>
+          <h3>3D MODELLING</h3>
+          <p>Building objects from digital space.</p>
+          <small>Data incoming...</small>
+        </article>
+
+        <article class="project-placeholder">
+          <div class="project-art">◎</div>
+          <span>FILE 002</span>
+          <h3>CHARACTER DESIGN</h3>
+          <p>Giving imaginary beings an identity.</p>
+          <small>Data incoming...</small>
+        </article>
+
+        <article class="project-placeholder">
+          <div class="project-art">⟁</div>
+          <span>FILE 003</span>
+          <h3>ENVIRONMENT ART</h3>
+          <p>Creating places beyond reality.</p>
+          <small>Data incoming...</small>
+        </article>
+
+        <article class="project-placeholder">
+          <div class="project-art">✦</div>
+          <span>FILE 004</span>
+          <h3>EXPERIMENTAL ART</h3>
+          <p>Testing ideas and exploring visuals.</p>
+          <small>Data incoming...</small>
+        </article>
+
+      </div>
+
+      <p class="small-note">Portfolio links and projects coming soon.</p>
+
     </div>
 
-  </section>
+  </template>
+
+  <!-- MACHINE CONTENT: PLAYER STATUS -->
+  <template id="machine-status-content">
+
+    <div class="machine-content status-content">
+
+      <p class="eyebrow">03 · CURRENT PLAYER STATUS</p>
+      <h2>PLAYER STATUS</h2>
+
+      <div class="rahul-info-card">
+        <span class="card-symbol">⟁</span>
+        <h3>STATUS UNKNOWN</h3>
+        <p>Player data is still being updated.</p>
+        <p class="small-note">New information coming soon.</p>
+      </div>
+
+    </div>
+
+  </template>
+
+  <!-- MACHINE CONTENT: SKILL TREE -->
+  <template id="machine-skills-content">
+
+    <div class="machine-content skills-content">
+
+      <p class="eyebrow">04 · SYSTEM ABILITIES</p>
+      <h2>MY SKILL TREE</h2>
+
+      <p class="section-description">
+        The tools and techniques behind the worlds I create.
+      </p>
+
+      <div class="skill-list">
+        <span>◈ 3D Modelling</span>
+        <span>◉ Character Design</span>
+        <span>⟁ Texturing</span>
+        <span>✦ Rigging</span>
+        <span>◎ Animation</span>
+        <span>◈ Autodesk Maya</span>
+        <span>◉ Adobe After Effects</span>
+        <span>⟁ Adobe Animate</span>
+        <span>✦ Rotoscoping</span>
+        <span>◎ Keying</span>
+        <span>◈ Wire Removal</span>
+      </div>
+
+    </div>
+
+  </template>
+
+  <!-- MACHINE CONTENT: PLAYER DATA -->
+  <template id="machine-data-content">
+
+    <div class="machine-content data-content">
+
+      <p class="eyebrow">05 · PLAYER DATA</p>
+      <h2>CREATOR PROFILE</h2>
+
+      <div class="rahul-info-card">
+        <span class="card-symbol">▣</span>
+        <h3>MY RESUME</h3>
+        <p>My CV will be available here soon.</p>
+        <p class="small-note">Profile update pending.</p>
+      </div>
+
+      <div class="rahul-contact-card">
+        <h3>ESTABLISH CONNECTION</h3>
+        <p>
+          Have a project, opportunity or idea?
+          Let's bring something interesting into existence.
+        </p>
+
+        <p class="contact-placeholder">
+          CONNECTION DETAILS COMING SOON
+        </p>
+      </div>
+
+    </div>
+
+  </template>
 
   <!-- FOOTER -->
-  <footer class="rahul-footer">
+  <footer class="rahul-footer arcade-footer">
 
     <div class="footer-stars">◈ ✦ ◎ ✧ ◈</div>
 
