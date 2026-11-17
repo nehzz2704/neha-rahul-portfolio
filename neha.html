@@ -24,41 +24,41 @@
         <span>A little journey through my imagination...</span>
       </div>
 
-      <!-- FIRST-PERSON CORRIDOR -->
       <div class="corridor-viewport" id="corridorViewport">
-
         <div class="corridor-scene" id="corridorScene">
 
-          <!-- ARCHITECTURE -->
+          <!-- CORRIDOR ARCHITECTURE -->
           <div class="corridor-ceiling"></div>
           <div class="corridor-wall corridor-wall-left"></div>
           <div class="corridor-wall corridor-wall-right"></div>
           <div class="corridor-floor"></div>
 
-          <!-- DISTANT CORRIDOR END -->
+          <!-- CORRIDOR END -->
           <div class="corridor-end">
             <div class="corridor-end-glow">✧</div>
             <span>A WORLD OF STORIES</span>
           </div>
 
-          <!-- HOVER-GLOW LANTERNS -->
-          <div class="corridor-lights" aria-label="Magical lanterns">
+          <!-- TWELVE GOLDEN LANTERNS -->
+          <div class="corridor-lights" aria-label="Magical golden lanterns">
 
-            <button class="corridor-lamp lamp-one" type="button"
-              aria-label="Magical lantern one">✦</button>
+            <span class="corridor-lamp lamp-left-1" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-left-2" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-left-3" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-left-4" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-left-5" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-left-6" aria-hidden="true"></span>
 
-            <button class="corridor-lamp lamp-two" type="button"
-              aria-label="Magical lantern two">✧</button>
-
-            <button class="corridor-lamp lamp-three" type="button"
-              aria-label="Magical lantern three">✦</button>
-
-            <button class="corridor-lamp lamp-four" type="button"
-              aria-label="Magical lantern four">✧</button>
+            <span class="corridor-lamp lamp-right-1" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-right-2" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-right-3" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-right-4" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-right-5" aria-hidden="true"></span>
+            <span class="corridor-lamp lamp-right-6" aria-hidden="true"></span>
 
           </div>
 
-          <!-- PEDESTAL 01 -->
+          <!-- BOOK 01 — ABOUT ME -->
           <div class="corridor-pedestal pedestal-one" data-depth="1">
             <div class="pedestal-glow"></div>
             <div class="pedestal-column"></div>
@@ -72,7 +72,7 @@
             </button>
           </div>
 
-          <!-- PEDESTAL 02 -->
+          <!-- BOOK 02 — MY CREATIONS -->
           <div class="corridor-pedestal pedestal-two" data-depth="2">
             <div class="pedestal-glow"></div>
             <div class="pedestal-column"></div>
@@ -86,7 +86,7 @@
             </button>
           </div>
 
-          <!-- PEDESTAL 03 -->
+          <!-- BOOK 03 — CURRENT STATUS -->
           <div class="corridor-pedestal pedestal-three" data-depth="3">
             <div class="pedestal-glow"></div>
             <div class="pedestal-column"></div>
@@ -100,7 +100,7 @@
             </button>
           </div>
 
-          <!-- PEDESTAL 04 -->
+          <!-- BOOK 04 — MY MAGIC TOOLKIT -->
           <div class="corridor-pedestal pedestal-four" data-depth="4">
             <div class="pedestal-glow"></div>
             <div class="pedestal-column"></div>
@@ -114,7 +114,7 @@
             </button>
           </div>
 
-          <!-- PEDESTAL 05 -->
+          <!-- BOOK 05 — RESUME AND CONTACT -->
           <div class="corridor-pedestal pedestal-five" data-depth="5">
             <div class="pedestal-glow"></div>
             <div class="pedestal-column"></div>
@@ -128,37 +128,7 @@
             </button>
           </div>
 
-          <!-- MAGICAL DETAILS -->
-          <div class="corridor-butterflies" aria-hidden="true">
-            🦋　✧　🦋　⋆　✧
-          </div>
-
-          <div class="corridor-sparkles" aria-hidden="true">
-            ✦　⋆　✧　♡　✦　✧
-          </div>
-
-          <div class="book-interaction-prompt" id="bookPrompt">
-            <span>✧</span>
-            <p>APPROACH A BOOK TO EXPLORE</p>
-          </div>
-
         </div>
-
-        <!-- GAME CONTROLS WILL BE CREATED BY JAVASCRIPT -->
-        <div class="corridor-controls">
-          <div class="keyboard-controls" aria-label="Movement controls">
-            <span class="key-up">W</span>
-            <span class="key-left">A</span>
-            <span class="key-down">S</span>
-            <span class="key-right">D</span>
-          </div>
-
-          <p>USE WASD OR ARROW KEYS TO EXPLORE</p>
-          <p class="corridor-mobile-hint">
-            EXPLORE USING THE ON-SCREEN CONTROLS
-          </p>
-        </div>
-
       </div>
     </section>
   </main>
@@ -210,6 +180,7 @@
       </p>
 
       <div class="project-grid">
+
         <article class="project-placeholder">
           <div class="project-art">✧</div>
           <span>PROJECT 01</span>
@@ -241,6 +212,7 @@
           <p>Ideas, practice and happy accidents.</p>
           <small>Artwork coming soon</small>
         </article>
+
       </div>
     </section>
   </template>
@@ -292,6 +264,7 @@
 
   <!-- BOOK 05 — RESUME AND CONTACT -->
   <template id="book-contact-content">
+
     <section class="portfolio-section" id="resume">
       <p class="eyebrow">MY LITTLE PASSPORT</p>
       <h2>MY RESUME 🎀</h2>
@@ -318,6 +291,7 @@
         </p>
       </div>
     </section>
+
   </template>
 
   <footer class="neha-footer">
