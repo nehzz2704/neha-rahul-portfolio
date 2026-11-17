@@ -1650,3 +1650,275 @@ body.rahul-world {
     35% { opacity: 1; }
     100% { opacity: 0; transform: translate(-200px, 220px) scale(2); }
 }
+
+/* =====================================
+   NEHA — THE ENCHANTED LIBRARY
+===================================== */
+
+.neha-world .enchanted-library {
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 6% 90px;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        radial-gradient(ellipse at 50% 40%,
+            rgba(255, 222, 249, 0.96),
+            rgba(246, 190, 232, 0.92) 55%,
+            rgba(226, 165, 219, 0.96));
+}
+
+/* LIBRARY HEADING */
+
+.neha-world .library-heading {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.neha-world .library-heading .eyebrow {
+    letter-spacing: 4px;
+    color: #a34f94;
+    font-size: 12px;
+}
+
+.neha-world .library-heading h2 {
+    color: #713c72;
+    font-size: clamp(28px, 5vw, 48px);
+    letter-spacing: 3px;
+    margin: 15px 0;
+}
+
+.neha-world .library-heading > p:last-child {
+    color: #875b83;
+    font-size: 15px;
+}
+
+/* LIBRARY ROOM */
+
+.neha-world .library-room {
+    position: relative;
+    max-width: 1150px;
+    min-height: 470px;
+    margin: auto;
+    padding: 55px 25px 35px;
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.35),
+            rgba(255,225,249,0.18)
+        );
+
+    border: 1px solid rgba(255,255,255,0.7);
+
+    box-shadow:
+        0 20px 65px rgba(126, 57, 124, 0.14),
+        inset 0 0 35px rgba(255,255,255,0.35);
+}
+
+/* FLOATING BUTTERFLIES */
+
+.neha-world .library-butterflies {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    opacity: 0.85;
+    pointer-events: none;
+    animation: libraryButterflies 5s ease-in-out infinite;
+}
+
+@keyframes libraryButterflies {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* FIVE PEDESTALS */
+
+.neha-world .library-pedestals {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 22px;
+    align-items: end;
+    min-height: 310px;
+}
+
+.neha-world .library-pedestal {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 15px 5px;
+    color: #74436e;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: transform 0.35s ease;
+}
+
+.neha-world .library-pedestal:hover,
+.neha-world .library-pedestal:focus-visible {
+    transform: translateY(-13px) scale(1.04);
+    outline: none;
+}
+
+/* BOOK COVERS */
+
+.neha-world .pedestal-book {
+    position: relative;
+    width: 105px;
+    height: 145px;
+    border-radius: 5px 12px 12px 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-left: 8px solid rgba(80, 36, 82, 0.3);
+
+    box-shadow:
+        7px 9px 15px rgba(83, 43, 91, 0.25),
+        inset 4px 0 7px rgba(255,255,255,0.35);
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.neha-world .library-pedestal:hover .pedestal-book {
+    transform: translateY(-9px) rotate(-3deg);
+    box-shadow:
+        0 0 25px rgba(255,255,255,0.9),
+        7px 15px 25px rgba(83, 43, 91, 0.25);
+}
+
+.neha-world .book-about {
+    background: linear-gradient(135deg, #f5b7dd, #c875ad);
+}
+
+.neha-world .book-creations {
+    background: linear-gradient(135deg, #d7b9fa, #9872ce);
+}
+
+.neha-world .book-status {
+    background: linear-gradient(135deg, #f6d6a5, #d79b87);
+}
+
+.neha-world .book-skills {
+    background: linear-gradient(135deg, #c5c4fa, #8884ce);
+}
+
+.neha-world .book-contact {
+    background: linear-gradient(135deg, #f4b9c5, #c86c91);
+}
+
+.neha-world .book-decoration {
+    font-size: 26px;
+    color: #fff4ff;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px white;
+}
+
+.neha-world .book-title {
+    font-family: Georgia, serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 5px rgba(75, 30, 75, 0.4);
+}
+
+/* PEDESTAL BASE */
+
+.neha-world .pedestal-base {
+    display: block;
+    width: 125px;
+    height: 43px;
+    margin-top: 8px;
+    border-radius: 50% 50% 12px 12px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7d5f0,
+            #bd8bb9 65%,
+            #93658e
+        );
+
+    box-shadow:
+        0 10px 15px rgba(94, 48, 93, 0.2),
+        inset 0 4px 7px rgba(255,255,255,0.65);
+}
+
+/* BOOK LABELS */
+
+.neha-world .pedestal-label {
+    margin-top: 17px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #75446f;
+}
+
+/* INSTRUCTIONS */
+
+.neha-world .library-instruction {
+    position: relative;
+    z-index: 2;
+    margin-top: 45px;
+    text-align: center;
+    color: #a05a95;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+/* MOBILE LAYOUT */
+
+@media (max-width: 700px) {
+
+    .neha-world .enchanted-library {
+        padding: 75px 5% 60px;
+    }
+
+    .neha-world .library-room {
+        padding: 50px 12px 30px;
+    }
+
+    .neha-world .library-pedestals {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 8px;
+    }
+
+    .neha-world .library-pedestal:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .neha-world .pedestal-book {
+        width: 95px;
+        height: 130px;
+    }
+
+    .neha-world .pedestal-base {
+        width: 115px;
+    }
+
+    .neha-world .library-instruction {
+        line-height: 1.8;
+    }
+}
