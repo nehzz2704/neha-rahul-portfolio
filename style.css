@@ -1186,3 +1186,61 @@ body.rahul-world {
         ) !important;
     opacity: 0.8;
 }
+
+/* =====================================
+   RAHUL'S ANIMATED PSYCHEDELIC SWIRLS
+===================================== */
+
+.rahul-world {
+    position: relative;
+    isolation: isolate;
+}
+
+.rahul-world::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image:
+        repeating-conic-gradient(
+            from 0deg at 50% 50%,
+            rgba(0, 225, 255, 0.28) 0deg 8deg,
+            transparent 8deg 18deg,
+            rgba(150, 35, 255, 0.3) 18deg 27deg,
+            transparent 27deg 38deg
+        ),
+        repeating-radial-gradient(
+            ellipse at 35% 45%,
+            transparent 0 35px,
+            rgba(0, 200, 255, 0.35) 38px 43px,
+            transparent 47px 75px,
+            rgba(175, 50, 255, 0.3) 78px 83px,
+            transparent 87px 120px
+        ),
+        radial-gradient(
+            circle at 70% 35%,
+            rgba(0, 110, 255, 0.5),
+            transparent 40%
+        );
+
+    background-size: 100% 100%;
+    opacity: 0.75;
+    transform-origin: center;
+    animation: psychedelicFlow 35s linear infinite;
+}
+
+@keyframes psychedelicFlow {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.08);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
