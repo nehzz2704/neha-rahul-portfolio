@@ -3254,3 +3254,291 @@ body.rahul-world {
 @media (prefers-reduced-motion: reduce) {
   .corridor-butterflies, .corridor-sparkles, .arcade-particles { animation: none !important; }
 }
+
+/* =========================================================
+   FINAL CLEAN PORTFOLIO WORLDS — NEHA & RAHUL
+   Keeps the existing landing page and original world palettes.
+   Objects are clickable; no movement controls are needed.
+========================================================= */
+
+/* Remove the old exploration/game interface and scattered decorations. */
+.enchanted-game .game-interface,
+.psychedelic-game .game-interface,
+.enchanted-game .game-help-button,
+.psychedelic-game .game-help-button,
+.enchanted-game .game-help-panel,
+.psychedelic-game .game-help-panel,
+.enchanted-game .game-direction-pad,
+.psychedelic-game .game-direction-pad,
+.enchanted-game .game-nearby-prompt,
+.psychedelic-game .game-nearby-prompt,
+.corridor-butterflies,
+.corridor-sparkles,
+.arcade-particles {
+  display: none !important;
+}
+
+.enchanted-game,
+.psychedelic-game {
+  overflow-x: hidden;
+}
+
+.enchanted-game .corridor-viewport,
+.psychedelic-game .arcade-viewport {
+  width: min(1200px, 94%);
+  height: clamp(440px, 66vw, 650px);
+  min-height: 440px;
+  margin: 26px auto 48px;
+  border-radius: 22px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.enchanted-game .corridor-scene,
+.psychedelic-game .arcade-scene {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none !important;
+  animation: none;
+}
+
+/* NEHA — keep the pink/lavender enchanted library and warm lantern light. */
+.enchanted-game .corridor-viewport {
+  border: 2px solid rgba(255, 235, 255, .9);
+  box-shadow: 0 0 34px rgba(229, 151, 220, .45), inset 0 0 45px rgba(255,255,255,.15);
+}
+
+.enchanted-game .corridor-lamp {
+  color: #ffe6a1;
+  background: radial-gradient(circle, #fff2bd 0%, #ffc85d 48%, rgba(255,177,70,.25) 72%);
+  border: 1px solid #ffe7a2;
+  box-shadow: 0 0 14px #ffd36d, 0 0 32px rgba(255,174,67,.72);
+  width: 13px;
+  height: 13px;
+  cursor: default;
+}
+
+.enchanted-game .corridor-lamp:hover {
+  transform: none;
+  box-shadow: 0 0 18px #ffe39a, 0 0 38px rgba(255,174,67,.8);
+}
+
+/* Five books: consistent size, clean alternating arrangement, no overlap. */
+.enchanted-game .corridor-pedestal {
+  width: clamp(112px, 13%, 154px);
+  height: 39%;
+  filter: drop-shadow(0 12px 14px rgba(60, 28, 65, .28));
+}
+.enchanted-game .pedestal-one { left: 8%; right: auto; top: 47%; transform: none; }
+.enchanted-game .pedestal-two { left: 27%; right: auto; top: 34%; transform: none; }
+.enchanted-game .pedestal-three { left: 43.5%; right: auto; top: 47%; transform: none; }
+.enchanted-game .pedestal-four { left: auto; right: 27%; top: 34%; transform: none; }
+.enchanted-game .pedestal-five { left: auto; right: 8%; top: 47%; transform: none; }
+
+.enchanted-game .pedestal-column {
+  width: 66%;
+  height: 45%;
+  background: linear-gradient(90deg, #95659e, #f3d0eb 48%, #98649e);
+  border: 1px solid rgba(255,255,255,.8);
+  box-shadow: inset 0 0 18px rgba(255,255,255,.22), 0 0 18px rgba(245,174,230,.22);
+}
+
+.enchanted-game .pedestal-glow {
+  bottom: 39%;
+  height: 26%;
+  background: radial-gradient(ellipse, rgba(255,239,190,.85), rgba(245,172,223,.35) 48%, transparent 74%);
+}
+
+.enchanted-game .corridor-book {
+  width: 82%;
+  min-height: 86px;
+  margin-bottom: -1px;
+  padding: 8px 5px;
+  gap: 7px;
+  border-width: 2px;
+  border-radius: 8px 12px 8px 5px;
+  box-shadow: 0 5px 15px rgba(55,20,65,.2), 0 0 15px rgba(255,255,255,.48), inset 4px 0 0 rgba(255,255,255,.2);
+  cursor: pointer;
+}
+
+.enchanted-game .corridor-book:hover,
+.enchanted-game .corridor-book:focus-visible {
+  filter: brightness(1.12);
+  transform: translateY(-8px) scale(1.045);
+  box-shadow: 0 8px 18px rgba(55,20,65,.25), 0 0 24px #f8c4ef;
+}
+
+.enchanted-game .corridor-book-symbol { font-size: 23px; }
+.enchanted-game .corridor-book-title { font-size: 9px; letter-spacing: .5px; text-align: center; }
+.enchanted-game .corridor-book-number { font-size: 8px; }
+
+/* RAHUL — preserve the dark neon arcade hall and its cyan/purple lighting. */
+.psychedelic-game .arcade-viewport {
+  border: 2px solid rgba(63, 222, 255, .72);
+  box-shadow: 0 0 34px rgba(0, 205, 255, .2), inset 0 0 65px rgba(125,35,255,.2);
+}
+
+/* Five arcade cabinets arranged across the open hall, evenly spaced. */
+.psychedelic-game .arcade-machine {
+  width: clamp(88px, 10.8%, 132px);
+  height: 39%;
+  min-height: 168px;
+  padding: 10px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: none;
+  transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+}
+
+.psychedelic-game .machine-one { left: 9%; right: auto; top: 48%; transform: none; }
+.psychedelic-game .machine-two { left: 26%; right: auto; top: 30%; transform: none; }
+.psychedelic-game .machine-three { left: 43.5%; right: auto; top: 42%; transform: none; }
+.psychedelic-game .machine-four { left: auto; right: 25.5%; top: 24%; transform: none; }
+.psychedelic-game .machine-five { left: auto; right: 7%; top: 49%; transform: none; }
+
+.psychedelic-game .arcade-machine:hover,
+.psychedelic-game .arcade-machine:focus-visible {
+  transform: translateY(-8px) scale(1.045);
+  filter: brightness(1.14);
+  box-shadow: 0 0 26px #00eaff, 0 0 48px rgba(139,54,255,.8);
+  outline: none;
+}
+
+.psychedelic-game .machine-screen {
+  width: 92%;
+  min-height: 58px;
+  padding: 4px;
+}
+
+.psychedelic-game .machine-name {
+  font-size: 8px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.psychedelic-game .machine-number { font-size: 8px; }
+.psychedelic-game .machine-controls { font-size: 13px; }
+.psychedelic-game .machine-base { height: 10px; }
+
+/* Clicked object gets a subtle focus while its information panel is open. */
+.enchanted-game .corridor-book.object-open,
+.psychedelic-game .arcade-machine.object-open {
+  filter: brightness(1.2);
+  box-shadow: 0 0 28px currentColor, 0 0 48px rgba(180,110,255,.55);
+}
+
+/* Shared information pop-up, with each world's own colour identity. */
+.game-overlay {
+  z-index: 2000;
+  padding: 18px;
+  background: rgba(16, 7, 28, .76);
+  backdrop-filter: blur(10px);
+}
+
+.game-overlay-panel {
+  width: min(880px, 94vw);
+  max-height: 88vh;
+  overflow: auto;
+  padding: clamp(22px, 4vw, 42px);
+  border-radius: 20px;
+}
+
+.enchanted-game .game-overlay-panel {
+  color: #68456d;
+  background: linear-gradient(145deg, #fff8fd, #f7e5f4);
+  border: 2px solid #f4c9e9;
+  box-shadow: 0 0 38px rgba(244,166,225,.65);
+}
+
+.psychedelic-game .game-overlay-panel {
+  color: #d9faff;
+  background: linear-gradient(145deg, #111432, #080b20);
+  border: 2px solid #4ceaff;
+  box-shadow: 0 0 38px rgba(22,140,255,.55), 0 0 70px rgba(139,54,255,.22);
+}
+
+.game-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  width: 38px;
+  height: 38px;
+  margin: -8px -8px 12px 12px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: rgba(150,100,150,.12);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.game-close:hover { transform: scale(1.06); }
+
+/* Tablet and phone layouts: keep all five objects visible and tappable. */
+@media (max-width: 760px) {
+  .enchanted-game .corridor-viewport,
+  .psychedelic-game .arcade-viewport {
+    width: 96%;
+    height: 570px;
+    min-height: 570px;
+    margin: 18px auto 32px;
+    border-radius: 15px;
+  }
+
+  .enchanted-game .corridor-pedestal {
+    width: 18%;
+    height: 31%;
+  }
+  .enchanted-game .pedestal-one { left: 2%; top: 56%; }
+  .enchanted-game .pedestal-two { left: 21%; top: 35%; }
+  .enchanted-game .pedestal-three { left: 41%; top: 56%; }
+  .enchanted-game .pedestal-four { right: 21%; top: 35%; }
+  .enchanted-game .pedestal-five { right: 2%; top: 56%; }
+  .enchanted-game .corridor-book { min-height: 72px; width: 88%; padding: 5px 3px; }
+  .enchanted-game .corridor-book-symbol { font-size: 19px; }
+  .enchanted-game .corridor-book-title { font-size: 7px; }
+  .enchanted-game .corridor-book-number { font-size: 7px; }
+
+  .psychedelic-game .arcade-machine {
+    width: 17%;
+    height: 31%;
+    min-height: 142px;
+    padding: 7px 4px;
+  }
+  .psychedelic-game .machine-one { left: 2%; top: 56%; }
+  .psychedelic-game .machine-two { left: 21%; top: 34%; }
+  .psychedelic-game .machine-three { left: 41.5%; top: 56%; }
+  .psychedelic-game .machine-four { right: 21%; top: 34%; }
+  .psychedelic-game .machine-five { right: 2%; top: 56%; }
+  .psychedelic-game .machine-screen { min-height: 42px; }
+  .psychedelic-game .screen-symbol { font-size: 19px; }
+  .psychedelic-game .screen-text,
+  .psychedelic-game .machine-name { font-size: 6px; }
+  .psychedelic-game .machine-controls { font-size: 10px; }
+}
+
+@media (max-width: 420px) {
+  .enchanted-game .corridor-viewport,
+  .psychedelic-game .arcade-viewport { height: 500px; min-height: 500px; }
+  .enchanted-game .corridor-pedestal { width: 19%; height: 29%; }
+  .enchanted-game .pedestal-one,
+  .enchanted-game .pedestal-three,
+  .enchanted-game .pedestal-five { top: 59%; }
+  .enchanted-game .pedestal-two,
+  .enchanted-game .pedestal-four { top: 36%; }
+  .psychedelic-game .arcade-machine { width: 18%; min-height: 126px; height: 29%; }
+  .psychedelic-game .machine-one,
+  .psychedelic-game .machine-three,
+  .psychedelic-game .machine-five { top: 59%; }
+  .psychedelic-game .machine-two,
+  .psychedelic-game .machine-four { top: 36%; }
+  .game-overlay { padding: 10px; }
+  .game-overlay-panel { width: 96vw; max-height: 92vh; padding: 22px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enchanted-game .corridor-book,
+  .psychedelic-game .arcade-machine,
+  .game-overlay-panel { animation: none !important; transition: none !important; }
+}
