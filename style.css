@@ -1,0 +1,155 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 20% 20%, #302052 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 80%, #172b4c 0%, transparent 45%),
+    #090914;
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  width: min(1100px, 92%);
+  margin: auto;
+  padding: 65px 0;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #c5a4ff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  letter-spacing: 5px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(36px, 7vw, 76px);
+  letter-spacing: 5px;
+  text-shadow: 0 0 25px #a56cff;
+}
+
+.subtitle {
+  color: #c9c4db;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px;
+  letter-spacing: 4px;
+  margin: 65px 0 28px;
+  color: #d8c8ff;
+}
+
+.players {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.player-card {
+  position: relative;
+  padding: 35px 24px;
+  min-height: 330px;
+  border: 1px solid #55466e;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #211b35, #10101d);
+  transition: transform 0.35s ease, border-color 0.35s ease,
+              box-shadow 0.35s ease;
+  overflow: hidden;
+}
+
+.player-card:hover {
+  transform: translateY(-12px) scale(1.025);
+  border-color: #c49aff;
+  box-shadow: 0 0 35px #a66aff55;
+}
+
+.player-number {
+  color: #a88bc9;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.character-placeholder {
+  width: 150px;
+  height: 150px;
+  margin: 24px auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 70px;
+  background: radial-gradient(circle, #7955a8, #28203e);
+  box-shadow: 0 0 30px #a56cff66;
+  transition: transform 0.35s ease;
+}
+
+.player-card:hover .character-placeholder {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+.player-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 23px;
+  letter-spacing: 3px;
+}
+
+.player-card p {
+  color: #c4bfd0;
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+.select-button {
+  margin-top: 25px;
+  padding: 13px 22px;
+  border: 1px solid #b58aff;
+  border-radius: 7px;
+  background: #8d56c8;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.select-button:hover {
+  background: #bd83ff;
+  transform: scale(1.06);
+}
+
+footer {
+  margin-top: 65px;
+  color: #77718c;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 650px) {
+  main {
+    padding: 45px 0;
+  }
+
+  .players {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    margin-top: 45px;
+  }
+}
