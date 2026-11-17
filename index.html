@@ -8,44 +8,60 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-  <main>
-    <p class="eyebrow">WELCOME TO OUR CREATIVE UNIVERSE</p>
+<body class="select-screen">
 
-    <h1>PLAYER SELECT</h1>
+  <main class="player-menu">
 
-    <p class="subtitle">
-      Two artists. Two worlds. One creative universe.
-    </p>
+    <header class="menu-header">
+      <p class="eyebrow">WELCOME TO OUR CREATIVE UNIVERSE</p>
+      <h1>PLAYER SELECT</h1>
+      <p class="subtitle">Two artists. Two worlds. One creative universe.</p>
+    </header>
 
     <h2 class="section-title">CHOOSE YOUR PLAYER</h2>
 
     <section class="players">
 
-      <article class="player-card">
+      <!-- NEHA -->
+      <article class="player-card neha-card">
         <p class="player-number">PLAYER 01</p>
 
-        <div class="character-placeholder">🎀</div>
+        <div class="character-stage">
+          <div class="silhouette"></div>
+          <div class="reveal-preview">
+            <span>ARTWORK COMING SOON</span>
+          </div>
+        </div>
 
-        <h3>NEHA</h3>
-        <p>Animation, imagination & a little magic.</p>
-
-        <button class="select-button">
-          ENTER NEHA'S WORLD
-        </button>
+        <div class="player-info">
+          <p class="player-role">THE CREATIVE SOUL</p>
+          <h3>NEHA</h3>
+          <p>Animation, imagination & a little magic.</p>
+          <a class="select-button" href="neha.html">
+            ENTER HER WORLD ↗
+          </a>
+        </div>
       </article>
 
-      <article class="player-card">
+      <!-- RAHUL -->
+      <article class="player-card rahul-card">
         <p class="player-number">PLAYER 02</p>
 
-        <div class="character-placeholder">🎮</div>
+        <div class="character-stage">
+          <div class="silhouette"></div>
+          <div class="reveal-preview">
+            <span>ARTWORK COMING SOON</span>
+          </div>
+        </div>
 
-        <h3>RAHUL</h3>
-        <p>Characters, creativity & beyond reality.</p>
-
-        <button class="select-button">
-          ENTER RAHUL'S WORLD
-        </button>
+        <div class="player-info">
+          <p class="player-role">THE WORLD BUILDER</p>
+          <h3>RAHUL</h3>
+          <p>Characters, creativity & beyond reality.</p>
+          <a class="select-button" href="rahul.html">
+            ENTER HIS WORLD ↗
+          </a>
+        </div>
       </article>
 
     </section>
@@ -53,6 +69,8 @@
     <footer>
       TWO PLAYERS · INFINITE POSSIBILITIES
     </footer>
+
   </main>
+
 </body>
 </html>
