@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,7 @@
 
       <!-- NEHA -->
       <article class="player-card neha-card">
+
         <p class="player-number">AVATAR: NEHA</p>
 
         <div class="character-stage">
@@ -37,16 +39,20 @@
           <p class="player-role">THE CREATIVE SOUL</p>
           <h3>NEHA</h3>
           <p>Animation, imagination & a little magic.</p>
+
           <a class="select-button portal-link"
              href="neha.html"
              data-portal="neha">
             ENTER HER WORLD ↗
           </a>
         </div>
+
       </article>
+
 
       <!-- RAHUL -->
       <article class="player-card rahul-card">
+
         <p class="player-number">AVATAR: RAHUL</p>
 
         <div class="character-stage">
@@ -60,12 +66,14 @@
           <p class="player-role">THE WORLD BUILDER</p>
           <h3>RAHUL</h3>
           <p>Characters, creativity & beyond reality.</p>
+
           <a class="select-button portal-link"
              href="rahul.html"
              data-portal="rahul">
             ENTER HIS WORLD ↗
           </a>
         </div>
+
       </article>
 
     </section>
@@ -76,11 +84,20 @@
 
   </main>
 
-  <!-- PORTAL TRANSITION -->
-  <div class="portal-transition" id="portalTransition" aria-hidden="true">
 
-    <!-- NEHA'S PORTAL -->
+  <!-- =================================
+       PORTAL TRANSITION
+  ================================== -->
+
+  <div class="portal-transition"
+       id="portalTransition"
+       aria-hidden="true">
+
+
+    <!-- NEHA'S PINK PORTAL -->
+
     <div class="portal-scene neha-portal">
+
       <div class="portal-ring"></div>
       <div class="portal-core"></div>
 
@@ -94,26 +111,32 @@
       </div>
 
       <p>ENTERING NEHA'S WORLD...</p>
+
     </div>
 
-    <!-- RAHUL'S PORTAL -->
+
+    <!-- RAHUL'S PSYCHEDELIC PORTAL -->
+
     <div class="portal-scene rahul-portal">
+
       <div class="portal-ring"></div>
       <div class="portal-core"></div>
 
-     <div class="portal-hand">
-  <div class="shadow-hand">
-    <span class="finger finger-one"></span>
-    <span class="finger finger-two"></span>
-    <span class="finger finger-three"></span>
-    <span class="finger finger-four"></span>
-    <span class="thumb"></span>
-    <span class="palm"></span>
-    <span class="wrist"></span>
-  </div>
-</div>
-  </div>
-</div>
+      <!-- ELECTRIC LIGHTNING BOLT -->
+
+      <div class="portal-lightning">
+
+        <svg viewBox="0 0 180 280" aria-hidden="true">
+
+          <path class="lightning-glow"
+            d="M105 5 L35 145 L82 132 L55 270 L150 105 L99 119 Z"/>
+
+          <path class="lightning-bolt"
+            d="M105 5 L35 145 L82 132 L55 270 L150 105 L99 119 Z"/>
+
+        </svg>
+
+      </div>
 
       <div class="portal-energy">
         <span>✦</span>
@@ -123,30 +146,43 @@
       </div>
 
       <p>ENTERING RAHUL'S DIMENSION...</p>
+
     </div>
 
   </div>
 
+
+  <!-- =================================
+       PORTAL TRANSITION SCRIPT
+  ================================== -->
+
   <script>
+
     const portalLinks = document.querySelectorAll(".portal-link");
     const transition = document.getElementById("portalTransition");
 
     portalLinks.forEach(link => {
+
       link.addEventListener("click", function(event) {
+
         event.preventDefault();
 
         const destination = this.dataset.portal;
         const targetPage = this.href;
 
-        transition.className = "portal-transition active " + destination + "-active";
+        transition.className =
+          "portal-transition active " + destination + "-active";
 
         document.body.classList.add("portal-opening");
 
         setTimeout(() => {
           window.location.href = targetPage;
         }, 1500);
+
       });
+
     });
+
   </script>
 
 </body>
